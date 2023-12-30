@@ -39,3 +39,5 @@ const routes = createBrowserRouter([
     element: <NotFound />,
   },
 ]);
+
+export default routes;

@@ -1,0 +1,37 @@
+nav {
+  background-color: #fff7db;
+  display: flex;
+  list-style: none;
+  padding: 1.3rem 3rem;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+nav .links {
+  display: flex;
+  gap: 2rem;
+}
+.links {
+  text-decoration: none;
+
+  .active {
+    color: #964405;
+  }
+
+  .link-style {
+    color: #574405;
+    text-decoration: none;
+  }
+}
+
+.logo-img {
+  width: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #564305;
+}

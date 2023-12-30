@@ -1,0 +1,55 @@
+.footer-container {
+  min-width: 100vw;
+  background-color: #fff7db;
+}
+
+.upper-footer,
+.lower-footer {
+  display: flex;
+  gap: 10vw;
+  padding: 5vw;
+  align-items: center;
+}
+
+.upper-footer h2 {
+  color: rgb(86, 67, 5);
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  line-height: 1.5rem;
+}
+.footer-about {
+  max-width: 60vw;
+}
+.copy-right {
+  min-width: 55vw;
+}
+.active {
+  color: #964405;
+}
+
+.link-style {
+  color: #574405;
+  text-decoration: none;
+}
+
+.footer-links a {
+  color: #574405;
+  text-decoration: none;
+}
+
+hr {
+  border-top: 1px dotted #574405;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.8rem;
+}
+
+.social-links {
+  text-decoration: none;
+}
