@@ -8,16 +8,9 @@ import {
 } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  GithubAuthProvider,
-} from "firebase/auth";
 import auth from "../../Config/Firebase";
 import Header from "../../Components/Header/Header";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 // import Loading from "../../components/Loading/Loading";
 
@@ -27,14 +20,6 @@ const Signup = () => {
     useCreateUserWithEmailAndPassword(auth, {
       sendEmailVerification: true,
     });
-  const [signInWithGoogle, googleUser, googleLoading, googleError] =
-    useSignInWithGoogle(auth);
-  const [signInWithGithub, gitHubUser, gitHubLoading, githubError] =
-    useSignInWithGithub(auth);
-
-  const backClick = () => {
-    navigate(-1);
-  };
 
   const signupSubmit = async (e) => {
     e.preventDefault();
@@ -65,7 +50,7 @@ const Signup = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  if (user || googleUser || gitHubUser) {
+  if (user) {
     navigate("/");
   }
 
@@ -136,26 +121,7 @@ const Signup = () => {
                   <Link to="/login">Log-in</Link>{" "}
                 </button>
               </div>
-              <div>
-                <div className="google-github">
-                  <button onClick={() => signInWithGoogle()}>
-                    <div className="btn-flex">
-                      Sign-up with <FcGoogle />
-                    </div>
-                  </button>
-                  <button onClick={() => signInWithGithub()}>
-                    <div className="btn-flex">
-                      Sign-up with <FaGithub />
-                    </div>
-                  </button>
-                </div>
-                <button className="goback-btn" onClick={backClick}>
-                  <div className="btn-flex">
-                    <IoMdArrowRoundBack />
-                    Go back
-                  </div>
-                </button>
-              </div>
+              <SocialLogin />
             </form>
           </div>
         </div>

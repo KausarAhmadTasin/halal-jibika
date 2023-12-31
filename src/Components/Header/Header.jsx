@@ -19,67 +19,55 @@ const Header = () => {
               <RxCross2 />
             </div>
             <div className="links">
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "link-style"
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                <li>Home</li>
+              </NavLink>
 
-              <li>
-                <NavLink
-                  to="/jobs"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "link-style"
-                  }
-                >
-                  Jobs
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/favorite"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "link-style"
-                  }
-                >
-                  Favorite
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "link-style"
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "link-style"
-                  }
-                >
-                  Contact
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/signup"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "link-style"
-                  }
-                >
-                  Signup
-                </NavLink>
-              </li>
+              <NavLink
+                to="/jobs"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                <li>Jobs</li>
+              </NavLink>
+              <NavLink
+                to="/favorite"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                <li>Favorite</li>
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                <li>About</li>
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                <li>Contact</li>
+              </NavLink>
+              <NavLink
+                to="/signup"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                <li>Signup</li>
+              </NavLink>
             </div>
           </div>
         </nav>
@@ -91,66 +79,42 @@ const Header = () => {
             <div className="logo">HALAL JIBIKA</div>
           </Link>
           <div className=" links ">
-            <li className="hideOnSmallScreen">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? "active" : "link-style"
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="hideOnSmallScreen">
-              <NavLink
-                to="/jobs"
-                className={({ isActive }) =>
-                  isActive ? "active" : "link-style"
-                }
-              >
-                Jobs
-              </NavLink>
-            </li>
-            <li className="hideOnSmallScreen">
-              <NavLink
-                to="/favorite"
-                className={({ isActive }) =>
-                  isActive ? "active" : "link-style"
-                }
-              >
-                Favorite
-              </NavLink>
-            </li>
-            <li className="hideOnSmallScreen">
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  isActive ? "active" : "link-style"
-                }
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="hideOnSmallScreen">
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  isActive ? "active" : "link-style"
-                }
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li className="hideOnSmallScreen">
-              <NavLink
-                to="/signup"
-                className={({ isActive }) =>
-                  isActive ? "active" : "link-style"
-                }
-              >
-                Signup
-              </NavLink>
-            </li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "link-style")}
+            >
+              <li className="hideOnSmallScreen">Home</li>
+            </NavLink>
+            <NavLink
+              to="/jobs"
+              className={({ isActive }) => (isActive ? "active" : "link-style")}
+            >
+              <li className="hideOnSmallScreen">Jobs</li>
+            </NavLink>
+            <NavLink
+              to="/favorite"
+              className={({ isActive }) => (isActive ? "active" : "link-style")}
+            >
+              <li className="hideOnSmallScreen">Favorite</li>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active" : "link-style")}
+            >
+              <li className="hideOnSmallScreen">About</li>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? "active" : "link-style")}
+            >
+              <li className="hideOnSmallScreen">Contact</li>
+            </NavLink>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) => (isActive ? "active" : "link-style")}
+            >
+              <li className="hideOnSmallScreen">Signup</li>
+            </NavLink>
           </div>
           <div onClick={() => handleClick()} className="hamburger">
             <RxHamburgerMenu />

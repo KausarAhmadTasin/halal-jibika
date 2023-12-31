@@ -12,6 +12,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import Header from "../../Components/Header/Header";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,16 +20,6 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle, googleUser, googleLoading, googleError] =
-    useSignInWithGoogle(auth);
-  const [signInWithGithub, gitHubUser, gitHubLoading, githubError] =
-    useSignInWithGithub(auth);
-
-  const navigate = useNavigate();
-
-  const backClick = () => {
-    navigate(-1);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -54,9 +45,6 @@ const Login = () => {
 
   if (loading) {
     return <p>Loading...</p>;
-  }
-  if (googleUser || gitHubUser) {
-    navigate("/");
   }
 
   return (
@@ -102,24 +90,7 @@ const Login = () => {
               <Link to="/signup">Create a free account</Link>{" "}
             </button>
           </div>
-          <div className="google-github">
-            <button onClick={() => signInWithGoogle()}>
-              <div className="btn-flex">
-                Log in with <FcGoogle />
-              </div>
-            </button>
-            <button onClick={() => signInWithGithub()}>
-              <div className="btn-flex">
-                Log in with <FaGithub />
-              </div>
-            </button>
-            <button className="goback-btn" onClick={backClick}>
-              <div className="btn-flex">
-                <IoMdArrowRoundBack />
-                Go back
-              </div>
-            </button>
-          </div>
+          <SocialLogin />
         </div>
       </div>
     </>
