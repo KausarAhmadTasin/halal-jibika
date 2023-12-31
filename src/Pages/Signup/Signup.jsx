@@ -73,86 +73,91 @@ const Signup = () => {
     <>
       <Header />
       <div className="reg-container">
-        <h2 className="text-center">Create a new account</h2>
+        <div className="reg-box">
+          <h2 className="text-center">Create a new account</h2>
 
-        <form onSubmit={signupSubmit}>
           <div className="login-container">
-            <div className="block">
-              <div className="single-input">
-                <label htmlFor="name"></label>
-                <input
-                  className="input-box"
-                  id="name"
-                  name="name"
-                  autoFocus
-                  placeholder="Full name..."
-                />
-              </div>
-              <div className="single-input ">
-                <label htmlFor="email"></label>
-                <input
-                  className="input-box"
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email address"
-                />
-              </div>
+            <form onSubmit={signupSubmit}>
+              <div className="block">
+                <div className="single-input">
+                  <label htmlFor="name"></label>
+                  <input
+                    className="input-box"
+                    id="name"
+                    name="name"
+                    autoFocus
+                    placeholder="Full name..."
+                  />
+                </div>
+                <div className="single-input ">
+                  <label htmlFor="email"></label>
+                  <input
+                    className="input-box"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email address"
+                  />
+                </div>
 
-              <div className="single-input">
-                <label htmlFor="password"></label>
-                <input
-                  className="input-box"
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="single-input">
-                <label htmlFor="password"></label>
-                <input
-                  className="input-box"
-                  type="password"
-                  id="c-password"
-                  name="cpassword"
-                  placeholder="Confirm Password"
-                />
-              </div>
+                <div className="single-input">
+                  <label htmlFor="password"></label>
+                  <input
+                    className="input-box"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+                <div className="single-input">
+                  <label htmlFor="password"></label>
+                  <input
+                    className="input-box"
+                    type="password"
+                    id="c-password"
+                    name="cpassword"
+                    placeholder="Confirm Password"
+                  />
+                </div>
 
+                <div>
+                  <input
+                    type="submit"
+                    value="Sign Up"
+                    className="sign-up-btn"
+                  />
+                </div>
+              </div>
+              <div className="foot-note">
+                <p>Already have an account?</p>
+                <button className="log-in-recomend-btn">
+                  {" "}
+                  <Link to="/login">Log-in</Link>{" "}
+                </button>
+              </div>
               <div>
-                <input type="submit" value="Sign Up" className="sign-up-btn" />
+                <div className="google-github">
+                  <button onClick={() => signInWithGoogle()}>
+                    <div className="btn-flex">
+                      Sign-up with <FcGoogle />
+                    </div>
+                  </button>
+                  <button onClick={() => signInWithGithub()}>
+                    <div className="btn-flex">
+                      Sign-up with <FaGithub />
+                    </div>
+                  </button>
+                </div>
+                <button className="goback-btn" onClick={backClick}>
+                  <div className="btn-flex">
+                    <IoMdArrowRoundBack />
+                    Go back
+                  </div>
+                </button>
               </div>
-            </div>
-            <div className="foot-note">
-              <p>Already have an account?</p>
-              <button className="log-in-recomend-btn">
-                {" "}
-                <Link to="/login">Log-in</Link>{" "}
-              </button>
-            </div>
+            </form>
           </div>
-        </form>
-
-        <div>
-          <div className="google-github">
-            <button onClick={() => signInWithGoogle()}>
-              <div className="btn-flex">
-                Sign-up with <FcGoogle />
-              </div>
-            </button>
-            <button onClick={() => signInWithGithub()}>
-              <div className="btn-flex">
-                Sign-up with <FaGithub />
-              </div>
-            </button>
-          </div>
-          <button className="goback-btn" onClick={backClick}>
-            <div className="btn-flex">
-              <IoMdArrowRoundBack />
-              Go back
-            </div>
-          </button>
         </div>
       </div>
     </>

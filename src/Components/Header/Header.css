@@ -53,12 +53,15 @@ nav .links {
   width: 50vw;
   padding: 0.5rem 3rem;
   justify-content: flex-start;
+  padding: 3rem;
 }
 
 .sidebar .links {
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
+  gap: 2rem;
+  font-size: 1.3rem;
 }
 
 .sidebar li {
@@ -72,13 +75,16 @@ nav .links {
   margin-bottom: 1rem;
 }
 .cancel-sidebar {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #574405;
+  margin: 0.8rem -1.5rem;
+  font-size: 2rem;
+  color: #aaacaf;
+  margin-bottom: 2rem;
 }
 .hamburger {
   display: none;
   margin-right: 4rem;
+  font-size: 2rem;
+  color: #9aaec2;
 }
 
 @media (max-width: 800px) {

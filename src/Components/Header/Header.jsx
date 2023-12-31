@@ -12,9 +12,9 @@ const Header = () => {
       {showSidebar && (
         <nav>
           <div className="sidebar">
-            <Link to="/">
+            {/* <Link to="/">
               <div className="logo logo-side">HALAL JIBIKA</div>
-            </Link>
+            </Link> */}
             <div onClick={handleClick} className="cancel-sidebar">
               <RxCross2 />
             </div>
@@ -29,6 +29,7 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
+
               <li>
                 <NavLink
                   to="/jobs"
@@ -37,6 +38,16 @@ const Header = () => {
                   }
                 >
                   Jobs
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/favorite"
+                  className={({ isActive }) =>
+                    isActive ? "active" : "link-style"
+                  }
+                >
+                  Favorite
                 </NavLink>
               </li>
               <li>
@@ -98,6 +109,16 @@ const Header = () => {
                 }
               >
                 Jobs
+              </NavLink>
+            </li>
+            <li className="hideOnSmallScreen">
+              <NavLink
+                to="/favorite"
+                className={({ isActive }) =>
+                  isActive ? "active" : "link-style"
+                }
+              >
+                Favorite
               </NavLink>
             </li>
             <li className="hideOnSmallScreen">

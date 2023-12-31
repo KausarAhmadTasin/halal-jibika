@@ -1,14 +1,19 @@
 .hero-section {
   display: flex;
-  height: 100vh;
+  padding: 0 10rem;
   padding-top: 20vh;
-  margin: 0vw 5rem;
-  max-width: 100vw;
+  width: 100vw;
   gap: 8rem;
+  background-color: #fff;
+  margin-bottom: 4vw;
+  height: 70vh;
 }
 
+.hero-text {
+  max-width: 40vw;
+}
 .primary-btn {
-  background-color: #455c30;
+  background-color: #0a66c2;
   cursor: pointer;
   color: white;
   font-weight: 600;
@@ -16,6 +21,12 @@
   padding: 0.8rem 2rem;
   border-radius: 5px;
   border-style: none;
+  &:hover {
+    background-color: #1875d1;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+      rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+      rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  }
 }
 
 .hero-img img {
@@ -25,7 +36,7 @@
 
 .hero-title {
   font-size: 2.6rem;
-  margin: 1.5rem auto;
+  margin: 1.5rem 0;
 }
 
 .hero-slogan {

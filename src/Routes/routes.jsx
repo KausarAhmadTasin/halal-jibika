@@ -7,6 +7,7 @@ import Jobs from "../Pages/Jobs/Jobs";
 import Signup from "../Pages/Signup/Signup";
 import NotFound from "../Components/Notfound/NotFound";
 import Login from "../Pages/Login/Login";
+import Favorite from "../Pages/Favorite/Favorite";
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/favorite",
+        element: <Favorite />,
       },
     ],
   },
