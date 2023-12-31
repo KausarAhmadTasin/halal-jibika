@@ -1,0 +1,36 @@
+.hero-section {
+  display: flex;
+  height: 100vh;
+  padding-top: 20vh;
+  margin: 0vw 5rem;
+  max-width: 100vw;
+  gap: 8rem;
+}
+
+.primary-btn {
+  background-color: #455c30;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.hero-img img {
+  border-radius: 8px;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  margin: 1.5rem auto;
+}
+
+.hero-slogan {
+  margin-bottom: 0.6rem;
+}
+
+.dero-desc {
+  margin-bottom: 1.5rem;
+}

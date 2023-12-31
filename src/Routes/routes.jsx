@@ -6,6 +6,7 @@ import Contact from "../Pages/Contact/Contact";
 import Jobs from "../Pages/Jobs/Jobs";
 import Signup from "../Pages/Signup/Signup";
 import NotFound from "../Components/Notfound/NotFound";
+import Login from "../Pages/Login/Login";
 
 const routes = createBrowserRouter([
   {
@@ -28,15 +29,19 @@ const routes = createBrowserRouter([
         path: "/jobs",
         element: <Jobs />,
       },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
     ],
   },
   {
     path: "*",
     element: <NotFound />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 

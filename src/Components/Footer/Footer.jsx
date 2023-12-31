@@ -62,7 +62,7 @@ const Footer = () => {
         <hr />
         <div className="lower-footer">
           <div className="copy-right">
-            <p>Copyright © 2017 All Rights Reserved by Halal Jibika .</p>
+            <p>Copyright © 2017 All Rights Reserved by Halal Jibika.</p>
           </div>
           <div className="social-links">
             <a href="https://www.facebook.com/kausarahmad.tasin/">
