@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Home.css";
 const Home = () => {
   return (
@@ -15,7 +16,9 @@ const Home = () => {
             dolor aliquid assumenda ducimus. Nemo corrupti id ratione at autem
             itaque?
           </div>
-          <button className="primary-btn">Explore</button>
+          <Link to="/signup">
+            <button className="primary-btn"> Explore Now </button>
+          </Link>
         </div>
         <div className="hero-img">
           <img src="../../../public/job-search.jpg" alt="" />

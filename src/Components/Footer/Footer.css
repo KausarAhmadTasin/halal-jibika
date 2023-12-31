@@ -53,10 +53,13 @@ hr {
   display: flex;
   gap: 2rem;
   font-size: 1.8rem;
-  text-decoration: none;
   font-style: none;
 }
 .copy-right {
   color: rgb(116, 116, 111);
   font-size: 0.8rem;
+}
+.social-links a {
+  text-decoration: none;
+  color: #0a66c2;
 }
