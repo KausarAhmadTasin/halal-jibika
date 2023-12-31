@@ -1,0 +1,67 @@
+.about-page {
+  max-width: 80%;
+  margin: 0 auto;
+  padding-top: 7vw;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  color: #333;
+}
+
+.header > p {
+  color: #696666;
+  margin-bottom: 4rem;
+}
+
+.mission-section,
+.team-section,
+.values-section,
+.contact-section {
+  margin-bottom: 4rem;
+}
+
+.mission-section h2,
+.values-section h2,
+.contact-section h2 {
+  margin-bottom: 1rem;
+}
+
+.team-section h2 {
+  margin-bottom: 4rem;
+}
+
+.team-members {
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.values-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.values-section li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

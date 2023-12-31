@@ -1,77 +1,127 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 import "./Login.css";
+import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import auth from "../../Config/Firebase";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import Header from "../../Components/Header/Header";
+
 const Login = () => {
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  //   const auth = getAuth(app);
-  //   const navigate = useNavigate();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const [signInWithGithub, gitHubUser, gitHubLoading, githubError] =
+    useSignInWithGithub(auth);
 
-  //   const loginEmail = (e) => {
-  //     e.preventDefault();
-  //     signInWithEmailAndPassword(auth, email, password)
-  //       .then((userCredential) => {
-  //         // Signed in
-  //         const user = userCredential.user;
-  //         alert("Loged in successfully");
-  //         navigate("/messenger");
-  //       })
-  //       .catch((error) => {
-  //         const errorCode = error.code;
-  //         const errorMessage = error.message;
-  //         alert("could not logged in!");
-  //       });
-  //   };
+  const navigate = useNavigate();
+
+  const backClick = () => {
+    navigate(-1);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      // The code below will only execute if the login is successful
+      if (email === user.email && password === user.password) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Error signing in:", error.message);
+      // Handle specific error cases, e.g., display an error message to the user
+      if (
+        error.code === "auth/user-not-found" ||
+        error.code === "auth/wrong-password"
+      ) {
+        // Handle incorrect email or password error
+        // Display an error message or perform other actions as needed
+      }
+      // You can add more specific error handling based on error codes if necessary
+    }
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  if (googleUser || gitHubUser) {
+    navigate("/");
+  }
+
   return (
     <>
       <Header />
-      <section className="login-section">
-        <h1 className="text-center title-text">Halal Jibika</h1>
-        <h2 className="text-center ma-b-1-5rem">Log in into your account</h2>
+      <div className="reg-container">
+        <h2 className="text-center">Log in into your account</h2>
 
         <div className="login-container">
-          <div className="block">
-            <div className="single-input ma-b-1-5rem">
+          <form className="block" onSubmit={handleSubmit}>
+            <div className="single-input">
+              <label htmlFor="email"></label>
               <input
                 className="input-box"
                 type="email"
-                autoFocus
+                name="email"
                 id="email"
-                //   onChange={(e) => setEmail(e.target.value)}
-                //   value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 placeholder="Email address"
               />
             </div>
 
-            <div className="single-input ma-b-1-5rem">
+            <div className="single-input">
+              <label htmlFor="password"></label>
               <input
                 className="input-box"
                 type="password"
                 id="password"
-                //   onChange={(e) => setPassword(e.target.value)}
-                //   value={password}
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 placeholder="Password"
               />
             </div>
 
-            <input
-              // onClick={loginEmail}
-              type="submit"
-              value="Log In"
-              className="ma-b-1-5rem width-10rem sign-up-btn"
-            />
-          </div>
+            <input type="submit" value="Log In" className="sign-up-btn" />
+          </form>
           <div className="foot-note">
             <p>Do not have an account? </p>
-            <button className="width-20rem log-in-rec">
+            <button className="log-in-recomend-btn">
               {" "}
-              <Link to="/signup">Sign-up</Link>{" "}
+              <Link to="/signup">Create a free account</Link>{" "}
+            </button>
+          </div>
+          <div className="google-github">
+            <button onClick={() => signInWithGoogle()}>
+              <div className="btn-flex">
+                Log in with <FcGoogle />
+              </div>
+            </button>
+            <button onClick={() => signInWithGithub()}>
+              <div className="btn-flex">
+                Log in with <FaGithub />
+              </div>
+            </button>
+            <button className="goback-btn" onClick={backClick}>
+              <div className="btn-flex">
+                <IoMdArrowRoundBack />
+                Go back
+              </div>
             </button>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };
