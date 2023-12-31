@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { useState } from "react";
@@ -12,9 +12,9 @@ const Header = () => {
       {showSidebar && (
         <nav>
           <div className="sidebar">
-            <NavLink to="/">
+            <Link to="/">
               <div className="logo logo-side">HALAL JIBIKA</div>
-            </NavLink>
+            </Link>
             <div onClick={handleClick} className="cancel-sidebar">
               <RxCross2 />
             </div>
@@ -76,7 +76,9 @@ const Header = () => {
 
       <nav>
         <div className="nav-bar">
-          <div className="logo">HALAL JIBIKA</div>
+          <Link to="/">
+            <div className="logo">HALAL JIBIKA</div>
+          </Link>
           <div className=" links ">
             <li className="hideOnSmallScreen">
               <NavLink

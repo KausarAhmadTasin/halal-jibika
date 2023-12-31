@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
 
 .nav-bar {
-  background-color: #fff7db;
+  background-color: #ffffff;
   display: flex;
   list-style: none;
   padding: 1.3rem 3rem;
@@ -14,24 +14,27 @@
 
 nav .links {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
 }
+
 .links {
   text-decoration: none;
+  margin-right: 3rem;
 
   .active {
-    color: #964405;
+    color: #0955a0;
+    background-color: #e9e0e0;
   }
 
   .link-style {
-    color: #574405;
+    color: #0a66c2;
     text-decoration: none;
   }
 }
 
 .logo {
   font-family: Train One;
-  color: #0f0f0f;
+  color: #0a66c2;
   font-weight: 600;
   cursor: pointer;
 }
@@ -43,7 +46,7 @@ nav .links {
   height: 100vh;
   z-index: 100;
   display: flex;
-  background-color: #fff7db81;
+  background-color: #ffffff;
   flex-direction: column;
   backdrop-filter: blur(10px);
   width: 50vw;

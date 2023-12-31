@@ -18,7 +18,7 @@ const Home = () => {
           <button className="primary-btn">Explore</button>
         </div>
         <div className="hero-img">
-          <img src="../../../public/job-serch.jpg" alt="" />
+          <img src="../../../public/job-search.jpg" alt="" />
         </div>
       </section>
     </>
