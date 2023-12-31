@@ -33,6 +33,7 @@ nav .links {
   font-family: Train One;
   color: #0f0f0f;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .sidebar {

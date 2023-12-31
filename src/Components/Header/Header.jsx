@@ -12,7 +12,9 @@ const Header = () => {
       {showSidebar && (
         <nav>
           <div className="sidebar">
-            <div className="logo logo-side">HALAL JIBIKA</div>
+            <NavLink to="/">
+              <div className="logo logo-side">HALAL JIBIKA</div>
+            </NavLink>
             <div onClick={handleClick} className="cancel-sidebar">
               <RxCross2 />
             </div>
