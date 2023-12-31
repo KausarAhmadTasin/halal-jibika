@@ -1,7 +1,16 @@
+.aboout-container {
+  padding: 16vh 0;
+}
+
 .about-page {
   max-width: 80%;
   margin: 0 auto;
-  padding-top: 7vw;
+  background-color: #fff;
+  margin-bottom: 5vh;
+  padding: 3rem 2rem;
+  border-radius: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .header {
