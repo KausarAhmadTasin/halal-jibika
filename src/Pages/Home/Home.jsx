@@ -7,7 +7,7 @@ const Home = () => {
         <div className="hero-text">
           <h1 className="hero-title">Find Halal Jobs</h1>
           <h3 className="hero-slogan">
-            “Keep hardworking, take patients and make yourself always ready for
+            “Keep hardworking, have patience and make yourself always ready for
             jobs”
           </h3>
           <div className="dero-desc">
