@@ -15,7 +15,11 @@
   color: rgb(86, 67, 5);
   margin-bottom: 1rem;
 }
-
+.footer-links h2 {
+  background: linear-gradient(to right, #0a66c2, #eba672);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .footer-links ul {
   list-style: none;
   line-height: 2rem;
@@ -24,6 +28,11 @@
 .footer-links ul li:hover,
 .social-links a:hover {
   transform: scale(1.06);
+}
+.footer-about h2 {
+  background: linear-gradient(to right, #0a66c2, #eba672);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .footer-about {
   max-width: 60vw;
@@ -61,5 +70,4 @@ hr {
 }
 .social-links a {
   text-decoration: none;
-  color: #0a66c2;
 }

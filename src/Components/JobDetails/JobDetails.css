@@ -1,15 +1,70 @@
+/* .boxd-container {
+  height: 100vh;
+} */
+
 .jobd-box {
-  padding: 15vh 0;
+  padding: 3vw;
   width: 50%;
-  height: 65vh;
+  height: 100vh;
   text-align: center;
   background-color: #fff;
   margin: 0 auto;
-  margin-bottom: 3rem;
+  top: 15vh;
+  z-index: -3;
+  position: relative;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 0.4rem;
   &:hover {
     background-color: #f7f7f7e3;
+  }
+}
+
+.job-content {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.jobd-logo {
+  border-radius: 0.8rem;
+  width: 60%;
+  margin: 1.5rem 3.1rem;
+}
+
+.job-desc {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.jobd-company,
+.jobd-position {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  color: rgb(51, 46, 46);
+}
+
+.jobds-hr {
+  width: 65%;
+  margin: 0 auto;
+  border: 1px solid rgb(197, 190, 190);
+  border-radius: 5px;
+}
+
+.crud-options {
+  display: flex;
+  gap: 3.5rem;
+  font-size: 1.3rem;
+  justify-content: center;
+  padding: 0.4rem;
+  color: #4e4b4b;
+}
+.edit,
+.delete,
+.heart {
+  &:hover {
+    transform: scale(1.1);
+    color: red;
   }
 }

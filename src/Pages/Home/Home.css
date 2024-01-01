@@ -55,3 +55,23 @@
 .dero-desc {
   margin-bottom: 1.5rem;
 }
+
+/* Latest jobs styles */
+.latest-jobs {
+  margin: 3vh auto;
+}
+.latest-box-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Mapped styles */
+.jobs-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  gap: 1rem;
+}

@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import "./Home.css";
+import LatestJobs from "../../Components/LatestJobs/LatestJobs";
 const Home = () => {
+  const loadedJobs = useLoaderData();
   return (
     <>
       <section className="hero-section">
@@ -22,6 +24,14 @@ const Home = () => {
         </div>
         <div className="hero-img">
           <img src="../../../public/job-search.jpg" alt="" />
+        </div>
+      </section>
+      <section className="latest-jobs">
+        <h2 className="hero-title latest-box-title">Latest Jobs</h2>
+        <div className="jobs-list">
+          {loadedJobs.data.slice(0, 5).map((job) => (
+            <LatestJobs key={job.id} job={job} />
+          ))}
         </div>
       </section>
     </>
