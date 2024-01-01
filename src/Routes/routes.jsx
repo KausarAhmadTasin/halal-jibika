@@ -8,6 +8,8 @@ import Signup from "../Pages/Signup/Signup";
 import NotFound from "../Components/Notfound/NotFound";
 import Login from "../Pages/Login/Login";
 import Favorite from "../Pages/Favorite/Favorite";
+import Jobdetails from "../Components/JobDetails/Jobdetails";
+import axios from "axios";
 
 const routes = createBrowserRouter([
   {
@@ -29,6 +31,12 @@ const routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/jobs/:id",
+        element: <Jobdetails />,
+        loader: ({ params }) =>
+          axios.get(`http://localhost:9000/jobs/${params.id}`),
       },
       {
         path: "/favorite",

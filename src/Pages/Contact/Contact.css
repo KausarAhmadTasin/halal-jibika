@@ -14,9 +14,11 @@
 }
 
 .contact-page h1 {
-  color: #333;
   text-align: center;
   margin-bottom: 1rem;
+  background: linear-gradient(to right, #0a66c2, #eba672);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .title-desc {

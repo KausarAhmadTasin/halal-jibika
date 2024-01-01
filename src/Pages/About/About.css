@@ -8,6 +8,7 @@
   background-color: #fff;
   margin-bottom: 5vh;
   padding: 2rem 2rem;
+  color: #333;
   border-radius: 0.8rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -18,7 +19,9 @@
 }
 
 .header > h1 {
-  color: #333;
+  background: linear-gradient(to right, #0a66c2, #eba672);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .header > p {

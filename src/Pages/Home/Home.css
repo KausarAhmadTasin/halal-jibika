@@ -11,6 +11,7 @@
 
 .hero-text {
   max-width: 40vw;
+  color: rgb(59, 54, 54);
 }
 .primary-btn {
   background-color: #0a66c2;
@@ -42,6 +43,9 @@
 .hero-title {
   font-size: 2.6rem;
   margin: 1.5rem 0;
+  background: linear-gradient(to right, #0a66c2, #eba672);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hero-slogan {

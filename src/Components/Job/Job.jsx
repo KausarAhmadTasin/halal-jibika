@@ -2,9 +2,10 @@ import "./Job.css";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
-  const { title, logo, companyName, position } = job;
-  console.log(logo);
+  const { id, title, logo, companyName, position } = job;
+  // console.log(logo);
   return (
     <>
       <div className="job-box-container">
@@ -14,15 +15,23 @@ const Job = ({ job }) => {
             <img className="job-logo" src={logo} alt="" />
             <h3 className="job-company">
               {" "}
-              <b>Company:</b> {companyName}
+              <b>Company Name:</b> {companyName}
             </h3>
             <h3 className="job-position">
               {" "}
-              <b>Position: </b> {position}
+              <b>Responsibility: </b> {position}
             </h3>
-            <button className="primary-btn " id="job-detail-btn">
-              Details
-            </button>
+            <div className="jobs-btn">
+              <button className="primary-btn " id="job-apply-btn">
+                Apply
+              </button>
+              <Link to={`/jobs/${id}`}>
+                <button className="primary-btn " id="job-detail-btn">
+                  Details
+                </button>
+              </Link>
+            </div>
+            <hr className="jobs-hr" />
             <div className="crud-options">
               <div className="heart">
                 {" "}
