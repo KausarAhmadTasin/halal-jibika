@@ -1,10 +1,11 @@
+// FavoritesContext.js
 import { createContext, useContext, useState } from "react";
 
 const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
   const [favoriteJobs, setFavoriteJobs] = useState([]);
-  const [applied, setApplied] = useState([]);
+  const [applied, setApplied] = useState([]); // Using 'applied' instead of 'appliedJobs'
 
   const removeFromFavorites = (job) => {
     setFavoriteJobs((prevFavorites) =>
@@ -19,9 +20,15 @@ export const FavoritesProvider = ({ children }) => {
   const addToFavorites = (job) => {
     setFavoriteJobs((prevFavorites) => [...prevFavorites, job]);
   };
+
   const addToApplied = (job) => {
     setApplied((prevApplied) => [...prevApplied, job]);
   };
+
+  const removeFromApplied = (jobId) => {
+    setApplied((prevApplied) => prevApplied.filter((job) => job.id !== jobId)); // Using 'setApplied' instead of 'setAppliedJobs'
+  };
+
   return (
     <FavoritesContext.Provider
       value={{
@@ -31,6 +38,7 @@ export const FavoritesProvider = ({ children }) => {
         addToApplied,
         removeFromFavorites,
         isFavorite,
+        removeFromApplied,
       }}
     >
       {children}

@@ -4,7 +4,7 @@ import Job from "../../Components/Job/Job";
 
 const Favorite = () => {
   const { favoriteJobs } = useFavorites();
-  console.log(favoriteJobs);
+  // console.log(favoriteJobs);
   return (
     <div className="fav-container">
       <h2 className="hero-title latest-box-title">Favorite Jobs</h2>

@@ -2,15 +2,17 @@ import "./Job.css";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
 import { toast } from "react-toastify";
 
-const Job = ({ job }) => {
+const Job = ({ job, handleDelete }) => {
   const { id, title, logo, companyName, position } = job;
   const [heartClicked, setHeartClicked] = useState(false);
+
+  const navigate = useNavigate();
 
   // const { addToFavorites } = useFavorites();
   const { addToFavorites, removeFromFavorites, isFavorite, addToApplied } =
@@ -27,14 +29,16 @@ const Job = ({ job }) => {
     }
   };
 
-  // const { addToApplied } = useFavorites();
   const handleAppliedClick = () => {
     confirm(`Do you want to apply to ${title}?`);
     addToApplied(job);
-
-    // console.log("clicked");
   };
-  // console.log(logo);
+
+  const handleEdit = () => {
+    confirm(`Do you want to edit ${title}?`);
+    navigate("/editJob", { state: { job } });
+  };
+
   return (
     <>
       <div className="job-box-container">
@@ -75,10 +79,10 @@ const Job = ({ job }) => {
                 )}
               </div>
               <div className="edit">
-                <FaRegEdit />
+                <FaRegEdit onClick={() => handleEdit(id)} />
               </div>
               <div className="delete">
-                <MdDelete />
+                <MdDelete onClick={() => handleDelete(id)} />
               </div>
             </div>
           </div>

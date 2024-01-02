@@ -1,32 +1,44 @@
-import { useState } from "react";
-import "./PostJob.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-const PostJob = () => {
-  const [jobPost, setJobPost] = useState({
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+const EditJob = () => {
+  const location = useLocation();
+  const { job } = location.state; // Accessing the job data from the route state
+  const navigate = useNavigate();
+  const [editJob, setEditJob] = useState({
     title: "",
     logo: "",
     companyName: "",
     position: "",
     description: "",
   });
-  const URL = `http://localhost:9000/jobs`;
-  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Set the initial state based on the job data
+    if (job) {
+      setEditJob({
+        title: job.title,
+        logo: job.logo,
+        companyName: job.companyName,
+        position: job.position,
+        description: job.description,
+      });
+    }
+  }, [job]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Assuming your server supports updating jobs with a specific ID
     axios
-      .post(URL, jobPost)
+      .put(`http://localhost:9000/jobs/${job.id}`, editJob)
       .then((response) => {
-        setJobPost(response.data);
+        setEditJob(response.data);
         navigate("/jobs");
       })
       .catch((error) => {
         console.error("Axios error:", error);
       });
   };
-
   return (
     <>
       <div className="post-container">
@@ -46,7 +58,7 @@ const PostJob = () => {
                   autoFocus
                   placeholder="Job Name..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, title: e.target.value })
+                    setEditJob({ ...editJob, title: e.target.value })
                   }
                 />
               </div>
@@ -61,7 +73,7 @@ const PostJob = () => {
                   autoFocus
                   placeholder="Company Logo..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, logo: e.target.value })
+                    setEditJob({ ...editJob, logo: e.target.value })
                   }
                 />
               </div>
@@ -75,7 +87,7 @@ const PostJob = () => {
                   name="companyName"
                   placeholder="Company Name..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, companyName: e.target.value })
+                    setEditJob({ ...editJob, companyName: e.target.value })
                   }
                 />
               </div>
@@ -89,7 +101,7 @@ const PostJob = () => {
                   name="res"
                   placeholder="Responsibility..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, position: e.target.value })
+                    setEditJob({ ...editJob, position: e.target.value })
                   }
                 />
               </div>
@@ -103,12 +115,12 @@ const PostJob = () => {
                   name="jobdesc"
                   placeholder="Job Description..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, description: e.target.value })
+                    setEditJob({ ...editJob, description: e.target.value })
                   }
                 />
               </div>
               <div>
-                <input type="submit" value="Post Job" className="sign-up-btn" />
+                <input type="submit" value="Edit Job" className="sign-up-btn" />
               </div>
             </form>
           </div>
@@ -118,4 +130,4 @@ const PostJob = () => {
   );
 };
 
-export default PostJob;
+export default EditJob;
