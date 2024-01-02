@@ -3,8 +3,16 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaHeart } from "react-icons/fa";
 const Job = ({ job }) => {
   const { id, title, logo, companyName, position } = job;
+  const [heartClicked, setHeartClicked] = useState(false);
+
+  const handleClcik = () => {
+    setHeartClicked(!handleClcik);
+    console.log("clicked");
+  };
   // console.log(logo);
   return (
     <>
@@ -35,7 +43,11 @@ const Job = ({ job }) => {
             <div className="crud-options">
               <div className="heart">
                 {" "}
-                <IoMdHeartEmpty />
+                {heartClicked ? (
+                  <FaHeart onClick={() => handleClcik()} />
+                ) : (
+                  <IoMdHeartEmpty onClick={() => handleClcik()} />
+                )}
               </div>
               <div className="edit">
                 <FaRegEdit />

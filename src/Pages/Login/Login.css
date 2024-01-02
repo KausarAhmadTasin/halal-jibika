@@ -28,7 +28,7 @@
   outline: none;
 }
 
-.sign-up-btn {
+.log-up-btn {
   background-image: linear-gradient(-180deg, #00d775, #00bd68);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
@@ -40,10 +40,10 @@
   width: 90%;
   border-style: none;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.sign-up-btn:hover {
+.log-up-btn:hover {
   background: #00bd68;
 }
 
@@ -85,4 +85,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.latest-jobs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#all-jobs-btn {
+  margin: 1rem auto;
+  width: 15vw;
 }

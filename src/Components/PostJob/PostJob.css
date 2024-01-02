@@ -1,0 +1,31 @@
+.post-container {
+  padding-top: 15vh;
+}
+.post-block {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-bottom: 5vh;
+  border-radius: 0.6rem;
+}
+.inner-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: rgb(66, 62, 62);
+  border-radius: 0.6rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.inner-post input {
+  width: 80vh;
+  margin-top: 0.4rem;
+}
+
+.post-title {
+  margin-bottom: 1.5rem;
+  margin-top: -0.5rem;
+  color: #0a66c2;
+}

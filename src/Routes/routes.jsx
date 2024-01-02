@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import Favorite from "../Pages/Favorite/Favorite";
 import Jobdetails from "../Components/JobDetails/Jobdetails";
 import axios from "axios";
+import PostJob from "../Components/PostJob/PostJob";
 
 const routes = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const routes = createBrowserRouter([
       {
         path: "/jobs",
         element: <Jobs />,
+      },
+      {
+        path: "/post",
+        element: <PostJob />,
       },
       {
         path: "/jobs/:id",

@@ -21,6 +21,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
     try {
@@ -81,7 +82,7 @@ const Login = () => {
               />
             </div>
 
-            <input type="submit" value="Log In" className="sign-up-btn" />
+            <input type="submit" value="Log In" className="log-up-btn" />
           </form>
           <div className="foot-note">
             <p>Do not have an account? </p>

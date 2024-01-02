@@ -19,7 +19,10 @@ const Home = () => {
             itaque?
           </div>
           <Link to="/signup">
-            <button className="primary-btn"> Explore Now </button>
+            <button className="primary-btn" id="exp-btn">
+              {" "}
+              Explore Now{" "}
+            </button>
           </Link>
         </div>
         <div className="hero-img">
@@ -28,10 +31,25 @@ const Home = () => {
       </section>
       <section className="latest-jobs">
         <h2 className="hero-title latest-box-title">Latest Jobs</h2>
-        <div className="jobs-list">
-          {loadedJobs.data.slice(0, 5).map((job) => (
-            <LatestJobs key={job.id} job={job} />
-          ))}
+        <div className="latest-jobs-container">
+          <div className="jobs-list">
+            {loadedJobs.data.slice(0, 5).map((job) => (
+              <LatestJobs key={job.id} job={job} />
+            ))}
+          </div>
+          <div>
+            <Link to="/post">
+              <button className="primary-btn " id="post-job-btn">
+                Post Job
+              </button>
+            </Link>
+            <Link to="/jobs">
+              <button id="all-jobs-btn" className="primary-btn">
+                {" "}
+                All Jobs{" "}
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

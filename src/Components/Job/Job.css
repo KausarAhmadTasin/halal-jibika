@@ -73,3 +73,20 @@
     color: red;
   }
 }
+
+.heart {
+  animation: pulseHeart 1.6s infinite ease-in-out;
+  color: red;
+}
+
+@keyframes pulseHeart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

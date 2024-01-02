@@ -75,3 +75,87 @@
 
   gap: 1rem;
 }
+#post-job-btn {
+  background-color: rgb(84, 235, 134);
+  padding: 0.4rem 2rem;
+  margin: 1rem 1.5rem;
+  height: 2.7rem;
+  width: 15vw;
+}
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.latest-jobs {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-section {
+  transform: scale(0.95);
+  animation: scaleUp 0.8s ease-in-out forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.primary-btn {
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.hero-img img {
+  transform: rotate(0deg);
+  transition: transform 0.8s ease-in-out;
+}
+
+.hero-img:hover img {
+  transform: rotate(10deg);
+}
+.jobs-list .job-card {
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.jobs-list .job-card:hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+#post-job-btn,
+#exp-btn {
+  animation: pulse 1.6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
