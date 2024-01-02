@@ -5,12 +5,16 @@ import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
+
 const Job = ({ job }) => {
   const { id, title, logo, companyName, position } = job;
   const [heartClicked, setHeartClicked] = useState(false);
 
-  const handleClcik = () => {
-    setHeartClicked(!handleClcik);
+  const { addToFavorites } = useFavorites();
+  const handleFavoriteClcik = () => {
+    setHeartClicked(!heartClicked);
+    addToFavorites(job);
     console.log("clicked");
   };
   // console.log(logo);
@@ -44,9 +48,9 @@ const Job = ({ job }) => {
               <div className="heart">
                 {" "}
                 {heartClicked ? (
-                  <FaHeart onClick={() => handleClcik()} />
+                  <FaHeart onClick={() => handleFavoriteClcik()} />
                 ) : (
-                  <IoMdHeartEmpty onClick={() => handleClcik()} />
+                  <IoMdHeartEmpty onClick={() => handleFavoriteClcik()} />
                 )}
               </div>
               <div className="edit">
@@ -58,8 +62,8 @@ const Job = ({ job }) => {
             </div>
           </div>
         </div>
+        <hr className="jobs-hr" />
       </div>
-      <hr className="jobs-hr" />
     </>
   );
 };

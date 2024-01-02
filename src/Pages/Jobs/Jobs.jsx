@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Job from "../../Components/Job/Job";
 import "./Jobs.css";
+import { Link } from "react-router-dom";
+import ApplyJobSide from "../../Components/ApplyJobSide/ApplyJobSide";
+import AppliedJobsSide from "../../Components/AppliedJobsSide/AppliedJobsSide";
 const Jobs = () => {
   const [jobs, setJobs] = useState("");
   const URL = "http://localhost:9000/jobs";
@@ -17,10 +20,14 @@ const Jobs = () => {
   if (!jobs) return null;
   return (
     <>
-      <div className="jobs-box">
-        {jobs.map((job) => (
-          <Job key={job.id} job={job} />
-        ))}
+      <div className="jobs-container">
+        <ApplyJobSide />
+        <div className="jobs-box">
+          {jobs.map((job) => (
+            <Job key={job.id} job={job} />
+          ))}
+        </div>
+        <AppliedJobsSide />
       </div>
     </>
   );

@@ -1,3 +1,46 @@
+.jobs-container {
+  padding: 15vh 2vw;
+  display: flex;
+  gap: 1rem;
+}
 .jobs-box {
-  padding: 15vh 5vw;
+  width: 65%;
+}
+.apply-job-box,
+.Applied-jobs-container {
+  width: 18vw;
+  padding: 2rem;
+  height: 25vh;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 0.4rem;
+}
+.Applied-jobs-container {
+  overflow: scroll;
+}
+.apply-job-box h2,
+.Applied-jobs-container h2 {
+  font-size: 1rem;
+}
+.apply-post-btn {
+  width: 70%;
+  background-color: rgb(84, 235, 134);
+  margin-top: 1rem;
+}
+.apply-post-btn {
+  animation: pulsea 1.6s infinite ease-in-out;
+}
+
+@keyframes pulsea {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

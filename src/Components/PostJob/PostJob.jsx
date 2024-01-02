@@ -27,20 +27,8 @@ const PostJob = () => {
       });
   };
 
-  // useEffect(() => {
-  //   if (jobPost) {
-  //     // Check if some condition is met before navigating
-  //     navigate("/jobs");
-  //   }
-  // }, [jobPost]);
-
   return (
     <>
-      {/* Job No: 1
-
-Company Name: Google
-Responsibility: Intern Developer
-Job Description: This is an internship opportunity from Google */}
       <div className="post-container">
         <div className="post-block">
           <div className="inner-post">

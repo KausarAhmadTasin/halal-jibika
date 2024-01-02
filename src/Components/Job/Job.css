@@ -1,5 +1,5 @@
 .job-box {
-  width: 50%;
+  width: 60%;
   height: 60vh;
   text-align: center;
   padding: 1.2rem;
@@ -23,7 +23,7 @@
 .job-logo {
   border-radius: 0.8rem;
   width: 27%;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 /* .inner-box {
   width: 0%;
@@ -41,7 +41,7 @@
 }
 
 .jobs-hr {
-  width: 52.5%;
+  width: 64%;
   margin: 0 auto;
   border: 1px solid rgb(197, 190, 190);
   border-radius: 5px;
@@ -58,7 +58,7 @@
 
 #job-detail-btn {
   padding: 0.4rem 2rem;
-  margin: 0.5rem 1.5rem;
+  margin: 1.5rem 1.5rem;
 }
 #job-apply-btn {
   background-color: rgb(84, 235, 134);
