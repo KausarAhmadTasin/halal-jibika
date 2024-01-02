@@ -17,9 +17,7 @@
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 0.4rem;
 }
-.Applied-jobs-container {
-  overflow: scroll;
-}
+
 .apply-job-box h2,
 .Applied-jobs-container h2 {
   font-size: 1rem;

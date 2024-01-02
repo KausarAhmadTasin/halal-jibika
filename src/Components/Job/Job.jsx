@@ -6,16 +6,33 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
+import { toast } from "react-toastify";
 
 const Job = ({ job }) => {
   const { id, title, logo, companyName, position } = job;
   const [heartClicked, setHeartClicked] = useState(false);
 
-  const { addToFavorites } = useFavorites();
-  const handleFavoriteClcik = () => {
-    setHeartClicked(!heartClicked);
-    addToFavorites(job);
-    console.log("clicked");
+  // const { addToFavorites } = useFavorites();
+  const { addToFavorites, removeFromFavorites, isFavorite, addToApplied } =
+    useFavorites();
+
+  const handleFavoriteClick = () => {
+    if (isFavorite(job)) {
+      // If the job is already in favorites, remove it
+      removeFromFavorites(job);
+    } else {
+      // If the job is not in favorites, add it
+      addToFavorites(job);
+      setHeartClicked(!heartClicked);
+    }
+  };
+
+  // const { addToApplied } = useFavorites();
+  const handleAppliedClick = () => {
+    confirm(`Do you want to apply to ${title}?`);
+    addToApplied(job);
+
+    // console.log("clicked");
   };
   // console.log(logo);
   return (
@@ -34,7 +51,11 @@ const Job = ({ job }) => {
               <b>Responsibility: </b> {position}
             </h3>
             <div className="jobs-btn">
-              <button className="primary-btn " id="job-apply-btn">
+              <button
+                onClick={() => handleAppliedClick()}
+                className="primary-btn "
+                id="job-apply-btn"
+              >
                 Apply
               </button>
               <Link to={`/jobs/${id}`}>
@@ -48,9 +69,9 @@ const Job = ({ job }) => {
               <div className="heart">
                 {" "}
                 {heartClicked ? (
-                  <FaHeart onClick={() => handleFavoriteClcik()} />
+                  <FaHeart onClick={() => handleFavoriteClick()} />
                 ) : (
-                  <IoMdHeartEmpty onClick={() => handleFavoriteClcik()} />
+                  <IoMdHeartEmpty onClick={() => handleFavoriteClick()} />
                 )}
               </div>
               <div className="edit">

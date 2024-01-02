@@ -17,7 +17,12 @@ const Jobs = () => {
 
   // console.log(jobs);
 
-  if (!jobs) return null;
+  if (!jobs)
+    return (
+      <>
+        <h1>No jobs added!</h1>
+      </>
+    );
   return (
     <>
       <div className="jobs-container">
