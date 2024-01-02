@@ -5,6 +5,7 @@ import "./Jobs.css";
 import { Link } from "react-router-dom";
 import ApplyJobSide from "../../Components/ApplyJobSide/ApplyJobSide";
 import AppliedJobsSide from "../../Components/AppliedJobsSide/AppliedJobsSide";
+import Loading from "../../Components/Loading/Loading";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -22,6 +23,10 @@ const Jobs = () => {
       setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
     });
   };
+
+  if (!jobs) {
+    return <Loading />;
+  }
 
   if (!jobs || jobs.length === 0) {
     return (

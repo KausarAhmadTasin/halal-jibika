@@ -1,9 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LatestJobs.css";
+import ApplyBtn from "../ApplyBtn/ApplyBtn";
+import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
 
 const LatestJobs = ({ job }) => {
   const { id, title, logo, companyName, position } = job;
-  //   console.log(id);
+
+  const { addToApplied } = useFavorites();
+  const navigate = useNavigate();
+
+  const handleAppliedClick = () => {
+    const userConfirmation = window.confirm(
+      `Do you want to apply to ${title}?`
+    );
+
+    if (userConfirmation) {
+      addToApplied(job);
+      navigate("/jobs");
+    }
+  };
+
   return (
     <>
       <div className="latest-box">
@@ -18,9 +34,8 @@ const LatestJobs = ({ job }) => {
           <b>Responsibility: </b> {position}
         </h3>
         <div className="jobs-btn">
-          <button className="primary-btn " id="job-apply-btn">
-            Apply
-          </button>
+          <ApplyBtn handleAppliedClick={handleAppliedClick} />
+
           <Link to={`/jobs/${id}`}>
             <button className="primary-btn " id="job-detail-btn">
               Details

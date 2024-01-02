@@ -7,6 +7,7 @@ import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
 import { toast } from "react-toastify";
+import ApplyBtn from "../ApplyBtn/ApplyBtn";
 
 const Job = ({ job, handleDelete }) => {
   const { id, title, logo, companyName, position } = job;
@@ -32,6 +33,7 @@ const Job = ({ job, handleDelete }) => {
   const handleAppliedClick = () => {
     confirm(`Do you want to apply to ${title}?`);
     addToApplied(job);
+    navigate("/jobs");
   };
 
   const handleEdit = () => {
@@ -55,13 +57,7 @@ const Job = ({ job, handleDelete }) => {
               <b>Responsibility: </b> {position}
             </h3>
             <div className="jobs-btn">
-              <button
-                onClick={() => handleAppliedClick()}
-                className="primary-btn "
-                id="job-apply-btn"
-              >
-                Apply
-              </button>
+              <ApplyBtn handleAppliedClick={handleAppliedClick} />
               <Link to={`/jobs/${id}`}>
                 <button className="primary-btn " id="job-detail-btn">
                   Details
