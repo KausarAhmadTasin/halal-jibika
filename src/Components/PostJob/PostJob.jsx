@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./PostJob.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 const PostJob = () => {
   const [jobPost, setJobPost] = useState({
     title: "",
@@ -20,6 +20,9 @@ const PostJob = () => {
       .post(URL, jobPost)
       .then((response) => {
         setJobPost(response.data);
+        toast.success("Job added successfuly!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
         navigate("/jobs");
       })
       .catch((error) => {

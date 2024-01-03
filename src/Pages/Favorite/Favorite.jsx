@@ -5,7 +5,7 @@ import Loading from "../../Components/Loading/Loading";
 
 const Favorite = () => {
   const { favoriteJobs } = useFavorites();
-  // console.log(favoriteJobs);
+
   if (!favoriteJobs) {
     return <Loading />;
   }

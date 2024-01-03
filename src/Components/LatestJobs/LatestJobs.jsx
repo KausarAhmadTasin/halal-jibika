@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./LatestJobs.css";
 import ApplyBtn from "../ApplyBtn/ApplyBtn";
 import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
+import { toast } from "react-toastify";
 
 const LatestJobs = ({ job }) => {
   const { id, title, logo, companyName, position } = job;
@@ -16,6 +17,9 @@ const LatestJobs = ({ job }) => {
 
     if (userConfirmation) {
       addToApplied(job);
+      toast.success("Applied Successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
       navigate("/jobs");
     }
   };

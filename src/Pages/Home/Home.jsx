@@ -23,7 +23,7 @@ const Home = () => {
             dolor aliquid assumenda ducimus. Nemo corrupti id ratione at autem
             itaque?
           </div>
-          <Link to="/signup">
+          <Link to="/jobs">
             <button className="primary-btn" id="exp-btn">
               {" "}
               Explore Now{" "}
@@ -38,7 +38,7 @@ const Home = () => {
         <h2 className="hero-title latest-box-title">Latest Jobs</h2>
         <div className="latest-jobs-container">
           <div className="jobs-list">
-            {loadedJobs.data.slice(0, 5).map((job) => (
+            {loadedJobs.slice(0, 5).map((job) => (
               <LatestJobs key={job.id} job={job} />
             ))}
           </div>
@@ -51,7 +51,7 @@ const Home = () => {
             <Link to="/jobs">
               <button id="all-jobs-btn" className="primary-btn">
                 {" "}
-                All Jobs{" "}
+                Explore All Jobs{" "}
               </button>
             </Link>
           </div>

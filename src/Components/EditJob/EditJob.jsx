@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const EditJob = () => {
   const location = useLocation();
   const { job } = location.state; // Accessing the job data from the route state
@@ -14,7 +16,6 @@ const EditJob = () => {
   });
 
   useEffect(() => {
-    // Set the initial state based on the job data
     if (job) {
       setEditJob({
         title: job.title,
@@ -28,10 +29,12 @@ const EditJob = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Assuming your server supports updating jobs with a specific ID
     axios
       .put(`http://localhost:9000/jobs/${job.id}`, editJob)
       .then((response) => {
+        toast.success("Job eddited successfully!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
         setEditJob(response.data);
         navigate("/jobs");
       })
@@ -39,6 +42,7 @@ const EditJob = () => {
         console.error("Axios error:", error);
       });
   };
+
   return (
     <>
       <div className="post-container">

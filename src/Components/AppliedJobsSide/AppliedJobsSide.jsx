@@ -4,7 +4,6 @@ const AppliedJobsSide = () => {
   const { applied, removeFromApplied } = useFavorites();
 
   const handleRemoveClick = (jobId) => {
-    // Remove the job from the applied list
     removeFromApplied(jobId);
   };
   return (

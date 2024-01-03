@@ -1,10 +1,5 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import auth from "../../Config/Firebase";
 import {
   useSignInWithEmailAndPassword,
@@ -12,41 +7,81 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import Header from "../../Components/Header/Header";
-import SocialLogin from "../SocialLogin/SocialLogin";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import Loading from "../../Components/Loading/Loading";
+import Error from "../../Components/Error/Error";
+import { toast } from "react-toastify";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const provider = new GoogleAuthProvider();
 
-  const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // The code below will only execute if the login is successful
-      if (email === user.email && password === user.password) {
+  const handleGoogleSignup = async () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
         navigate("/");
-      }
-    } catch (error) {
-      console.error("Error signing in:", error.message);
-      // Handle specific error cases, e.g., display an error message to the user
-      if (
-        error.code === "auth/user-not-found" ||
-        error.code === "auth/wrong-password"
-      ) {
-        // Handle incorrect email or password error
-        // Display an error message or perform other actions as needed
-      }
-      // You can add more specific error handling based on error codes if necessary
-    }
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
   };
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  const handleGithubSignup = async () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        const user = result.user;
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GithubAuthProvider.credentialFromError(error);
+      });
+  };
+  const navigate = useNavigate();
+
+  const backClick = () => {
+    navigate(-1);
+  };
+
+  const loginHandle = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (!email || !password) {
+      return toast.error("Email and password are required!");
+    }
+
+    try {
+      await signInWithEmailAndPassword(email, password);
+      if (user) {
+        navigate("/");
+        toast.success("Logged in!");
+      }
+    } catch (error) {
+      // Handle specific Firebase email/password sign-in error here
+      toast.error("Invalid email or password!");
+    }
+  };
 
   return (
     <>
@@ -55,29 +90,23 @@ const Login = () => {
         <h2 className="text-center">Log in into your account</h2>
 
         <div className="login-container">
-          <form className="block" onSubmit={handleSubmit}>
+          <form onSubmit={loginHandle} className="block">
             <div className="single-input">
-              <label htmlFor="email"></label>
               <input
                 className="input-box"
                 type="email"
                 name="email"
                 id="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
                 placeholder="Email address"
               />
             </div>
 
             <div className="single-input">
-              <label htmlFor="password"></label>
               <input
                 className="input-box"
                 type="password"
                 id="password"
                 name="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
                 placeholder="Password"
               />
             </div>
@@ -91,7 +120,20 @@ const Login = () => {
               <Link to="/signup">Create a free account</Link>{" "}
             </button>
           </div>
-          <SocialLogin />
+          <div className="google-github">
+            <button className="btn-flex" onClick={handleGoogleSignup}>
+              Sign-up with <FcGoogle />
+            </button>
+            <button className="btn-flex" onClick={handleGithubSignup}>
+              Sign-up with <FaGithub />
+            </button>
+          </div>
+          <button className="goback-btn" onClick={() => backClick()}>
+            <div className="btn-flex">
+              <IoMdArrowRoundBack />
+              Go back
+            </div>
+          </button>
         </div>
       </div>
     </>

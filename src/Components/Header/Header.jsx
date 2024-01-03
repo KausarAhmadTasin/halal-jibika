@@ -1,20 +1,32 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Config/Firebase";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { CgProfile } from "react-icons/cg";
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [user, setUser] = useAuthState(auth);
+  const navigate = useNavigate();
+
   const handleClick = () => {
     setShowSidebar(!showSidebar);
   };
+
+  const handleSignOut = () => {
+    signOut(auth);
+    toast.success("Logged out!");
+    navigate("/login");
+  };
+
   return (
     <>
       {showSidebar && (
         <nav>
           <div className="sidebar">
-            {/* <Link to="/">
-              <div className="logo logo-side">HALAL JIBIKA</div>
-            </Link> */}
             <div onClick={handleClick} className="cancel-sidebar">
               <RxCross2 />
             </div>
@@ -75,9 +87,11 @@ const Header = () => {
 
       <nav>
         <div className="nav-bar">
-          <Link to="/">
-            <div className="logo">HALAL JIBIKA</div>
-          </Link>
+          <div className="logo-box">
+            <Link to="/">
+              <div className="logo">HALAL JIBIKA</div>
+            </Link>
+          </div>
           <div className=" links ">
             <NavLink
               to="/"
@@ -109,13 +123,47 @@ const Header = () => {
             >
               <li className="hideOnSmallScreen">Contact</li>
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/signup"
-              className={({ isActive }) => (isActive ? "active" : "link-style")}
+              className={({ isActive }) =>
+                isActive ? "active signup" : "link-style"
+              }
             >
-              <li className="hideOnSmallScreen">Signup</li>
-            </NavLink>
+              <li className="hideOnSmallScreen signup">Signup</li>
+            </NavLink> */}
+
+            {user ? (
+              <Link onClick={() => handleSignOut()}>
+                <li className="log-btn">Log-Out</li>
+              </Link>
+            ) : (
+              <NavLink className="log-btn" to="/login">
+                <li>Log-In</li>
+              </NavLink>
+            )}
           </div>
+          <div className="profile-container">
+            {user ? (
+              <div className="profile">
+                <Link>
+                  <li>
+                    {" "}
+                    <img
+                      className="profile-img"
+                      src={user?.photoURL}
+                      alt=""
+                    />{" "}
+                  </li>
+                </Link>
+                <Link>
+                  <li className="profile-name">{user?.displayName}</li>
+                </Link>
+              </div>
+            ) : (
+              <CgProfile className="profile-img" />
+            )}
+          </div>
+
           <div onClick={() => handleClick()} className="hamburger">
             <RxHamburgerMenu />
           </div>

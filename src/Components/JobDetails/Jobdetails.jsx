@@ -1,10 +1,27 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import "./JobDetails.css";
+import ApplyBtn from "../ApplyBtn/ApplyBtn";
+import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
+import Job from "../Job/Job";
 
 const Jobdetails = () => {
+  const navigate = useNavigate();
+  const { addToApplied } = useFavorites();
+
+  const handleAppliedClick = () => {
+    const userConfirmation = window.confirm(
+      `Do you want to apply to ${title}?`
+    );
+
+    if (userConfirmation) {
+      addToApplied(Job);
+      navigate("/jobs");
+    }
+  };
+
   const {
     data: { id, title, logo, companyName, position, description },
   } = useLoaderData();
@@ -36,9 +53,7 @@ const Jobdetails = () => {
               </div>
             </div>
             <div className="jobs-btn">
-              <button className="primary-btn " id="job-apply-btn">
-                Apply
-              </button>
+              <ApplyBtn handleAppliedClick={handleAppliedClick} />
             </div>
             <hr className="jobds-hr" />
             <div className="crud-options">

@@ -21,7 +21,10 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => axios.get("http://localhost:9000/jobs"),
+        loader: () =>
+          axios
+            .get("http://localhost:9000/jobs")
+            .then((response) => response.data),
       },
       {
         path: "/about",

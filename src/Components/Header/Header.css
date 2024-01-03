@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Train+One&display=swap");
 
+/* Navbar styles */
 .nav-bar {
   background-color: #ffffff;
   display: flex;
@@ -9,12 +10,14 @@
   font-size: 1.2rem;
   font-weight: 500;
   position: fixed;
-  width: 95%;
+  align-content: center;
+  align-items: center;
+  width: 93%;
   z-index: 2;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-nav .links {
+.nav-bar .links {
   display: flex;
   gap: 4rem;
 }
@@ -22,25 +25,28 @@ nav .links {
 .links {
   text-decoration: none;
   margin-right: 3rem;
+  display: flex;
+  align-items: center;
+}
 
-  .active {
-    color: #0955a0;
-    background-color: #e9e0e0;
-  }
+.links .active {
+  color: #0955a0;
+  background-color: #e9e0e0;
+}
 
-  .link-style {
-    color: #0a66c2;
-    text-decoration: none;
-  }
+.links .link-style {
+  color: #0a66c2;
+  text-decoration: none;
 }
 
 .logo {
-  font-family: Train One;
+  font-family: "Train One", cursive;
   color: #0a66c2;
   font-weight: 600;
   cursor: pointer;
 }
 
+/* Sidebar styles */
 .sidebar {
   position: fixed;
   top: 0;
@@ -52,35 +58,32 @@ nav .links {
   flex-direction: column;
   backdrop-filter: blur(10px);
   width: 50vw;
-  padding: 0.5rem 3rem;
-  justify-content: flex-start;
   padding: 3rem;
+  justify-content: flex-start;
 }
 
 .sidebar .links {
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
-  gap: 2rem;
   font-size: 1.3rem;
+  gap: 2rem;
 }
 
-.sidebar li {
-  width: 100%;
-  list-style: none;
-  &:hover {
-    transform: scale(1.02);
-  }
+.sidebar li:hover {
+  transform: scale(1.02);
 }
+
 .logo-side {
   margin-bottom: 1rem;
 }
+
 .cancel-sidebar {
   margin: 0.8rem -1.5rem;
   font-size: 2rem;
   color: #aaacaf;
   margin-bottom: 2rem;
 }
+
 .hamburger {
   display: none;
   margin-right: 4rem;
@@ -88,10 +91,54 @@ nav .links {
   color: #9aaec2;
 }
 
+/* Profile styles */
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-img {
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(155, 153, 153);
+}
+
+.profile-img:hover + .profile-name {
+  display: flex;
+}
+
+.profile-name {
+  font-size: 0.8rem;
+  width: 8rem;
+}
+
+/* Login button styles */
+.log-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.log-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Media query for small screens */
 @media (max-width: 800px) {
   .hamburger {
     display: block;
   }
+
   .hideOnSmallScreen {
     display: none;
   }

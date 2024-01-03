@@ -1,54 +1,66 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css";
-import {
-  useCreateUserWithEmailAndPassword,
-  useSignInWithGithub,
-  useSignInWithGoogle,
-  useUpdateProfile,
-} from "react-firebase-hooks/auth";
-import { toast } from "react-toastify";
-
 import auth from "../../Config/Firebase";
-import Header from "../../Components/Header/Header";
-import SocialLogin from "../SocialLogin/SocialLogin";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import Loading from "../../Components/Loading/Loading";
+import Error from "../../Components/Error/Error";
 
-// import Loading from "../../components/Loading/Loading";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
+import Header from "../../Components/Header/Header";
 
 const Signup = () => {
-  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, {
-      sendEmailVerification: true,
-    });
+    useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
 
-  const signupSubmit = async (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const confirmPassword = e.target.cpassword.value;
+  const handleGoogleSignup = async () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
+  };
 
-    // console.log(name, email, password, confirmPassword);
+  const handleGithubSignup = async () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
 
-    if (password !== confirmPassword) {
-      return toast.error("Password does not match!");
-    } else {
-      createUserWithEmailAndPassword(email, password);
-
-      navigate("/");
-      return toast.success("Sign Up Successfully");
-    }
+        const user = result.user;
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GithubAuthProvider.credentialFromError(error);
+      });
   };
 
   if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
+    return <Error />;
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   if (user) {
     navigate("/");
@@ -58,71 +70,57 @@ const Signup = () => {
     <>
       <Header />
       <div className="reg-container">
-        <div className="reg-box">
-          <h2 className="text-center">Create a new account</h2>
+        <h2 className="text-center">Create a new account</h2>
 
-          <div className="login-container">
-            <form onSubmit={signupSubmit}>
-              <div className="block">
-                <div className="single-input">
-                  <label htmlFor="name"></label>
-                  <input
-                    className="input-box"
-                    id="name"
-                    name="name"
-                    autoFocus
-                    placeholder="Full name..."
-                  />
-                </div>
-                <div className="single-input ">
-                  <label htmlFor="email"></label>
-                  <input
-                    className="input-box"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email address"
-                  />
-                </div>
+        <div className="signup-container">
+          <form>
+            <div className="single-input">
+              <input
+                className="input-box"
+                type="email"
+                name="email"
+                id="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="Email address"
+              />
+            </div>
 
-                <div className="single-input">
-                  <label htmlFor="password"></label>
-                  <input
-                    className="input-box"
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Password"
-                  />
-                </div>
-                <div className="single-input">
-                  <label htmlFor="password"></label>
-                  <input
-                    className="input-box"
-                    type="password"
-                    id="c-password"
-                    name="cpassword"
-                    placeholder="Confirm Password"
-                  />
-                </div>
+            <div className="single-input">
+              <input
+                className="input-box"
+                type="password"
+                id="password"
+                name="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="Password"
+              />
+            </div>
 
-                <div>
-                  <input
-                    type="submit"
-                    value="Sign Up"
-                    className="sign-up-btn"
-                  />
-                </div>
-              </div>
-              <div className="foot-note">
-                <p>Already have an account?</p>
-                <button className="log-in-recomend-btn">
-                  {" "}
-                  <Link to="/login">Log-in</Link>{" "}
-                </button>
-              </div>
-              <SocialLogin />
-            </form>
+            <input
+              onClick={() => createUserWithEmailAndPassword(email, password)}
+              type="submit"
+              value="Sign Up"
+              className="sign-up-btn"
+            />
+          </form>
+
+          <div className="google-github">
+            <button onClick={handleGoogleSignup} className="btn-flex">
+              Sign up with <FcGoogle />
+            </button>
+            <button onClick={() => handleGithubSignup()} className="btn-flex">
+              Sign up with <FaGithub />
+            </button>
+          </div>
+
+          <div className="foot-note">
+            <p>Already have an account? </p>
+            <button className="log-in-recommend-btn">
+              {" "}
+              <Link to="/login">Log in</Link>{" "}
+            </button>
           </div>
         </div>
       </div>

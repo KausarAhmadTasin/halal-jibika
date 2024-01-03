@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Job from "../../Components/Job/Job";
 import "./Jobs.css";
-import { Link } from "react-router-dom";
 import ApplyJobSide from "../../Components/ApplyJobSide/ApplyJobSide";
 import AppliedJobsSide from "../../Components/AppliedJobsSide/AppliedJobsSide";
 import Loading from "../../Components/Loading/Loading";

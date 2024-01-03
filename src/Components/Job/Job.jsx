@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./Job.css";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
@@ -7,39 +8,51 @@ import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useFavorites } from "../../Contexts/FavoriteContext/FavoriteContext";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import ApplyBtn from "../ApplyBtn/ApplyBtn";
+import Loading from "../Loading/Loading";
 
 const Job = ({ job, handleDelete }) => {
   const { id, title, logo, companyName, position } = job;
   const [heartClicked, setHeartClicked] = useState(false);
-
-  const navigate = useNavigate();
-
-  // const { addToFavorites } = useFavorites();
   const { addToFavorites, removeFromFavorites, isFavorite, addToApplied } =
     useFavorites();
-
-  const handleFavoriteClick = () => {
-    if (isFavorite(job)) {
-      // If the job is already in favorites, remove it
-      removeFromFavorites(job);
-    } else {
-      // If the job is not in favorites, add it
-      addToFavorites(job);
-      setHeartClicked(!heartClicked);
-    }
-  };
-
-  const handleAppliedClick = () => {
-    confirm(`Do you want to apply to ${title}?`);
-    addToApplied(job);
-    navigate("/jobs");
-  };
+  const navigate = useNavigate();
 
   const handleEdit = () => {
     confirm(`Do you want to edit ${title}?`);
     navigate("/editJob", { state: { job } });
   };
+
+  const handleFavoriteClick = () => {
+    if (isFavorite(job)) {
+      removeFromFavorites(job);
+    } else {
+      addToFavorites(job);
+      setHeartClicked(!heartClicked);
+      toast.success("Added to favorite!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+  };
+
+  const handleAppliedClick = () => {
+    const userConfirmation = window.confirm(
+      `Do you want to apply to ${title}?`
+    );
+    if (userConfirmation) {
+      addToApplied(job);
+      toast.success("Applied Successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      navigate("/jobs");
+    }
+  };
+
+  if (!job) {
+    return <Loading />;
+  }
 
   return (
     <>
