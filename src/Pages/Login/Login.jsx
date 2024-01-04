@@ -115,10 +115,12 @@ const Login = () => {
           </div>
           <div className="google-github">
             <button className="btn-flex" onClick={handleGoogleSignup}>
-              Sign-up with <FcGoogle />
+              Sign-up with
+              <FcGoogle />
             </button>
             <button className="btn-flex" onClick={handleGithubSignup}>
-              Sign-up with <FaGithub />
+              Sign-up with
+              <FaGithub />
             </button>
           </div>
           <button className="goback-btn" onClick={() => backClick()}>
