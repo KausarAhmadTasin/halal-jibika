@@ -170,6 +170,26 @@ body {
   }
 }
 
+@media (min-width: 576.01px) and (max-width: 992px) {
+  .jobs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 95vw;
+  }
+  .hero-section {
+    display: flex;
+    padding: 0 3rem;
+    padding-top: 12vh;
+    width: 95vw;
+    height: 35vh;
+  }
+  .hero-img img {
+    border-radius: 8px;
+    max-width: 35vw;
+    margin-top: 2rem;
+  }
+}
+
 @media (max-width: 576px) {
   .hero-section {
     display: flex;
@@ -205,13 +225,5 @@ body {
   }
   #all-jobs-btn {
     height: 3rem;
-  }
-}
-
-@media (min-width: 576.01px) and (max-width: 992px) {
-  .jobs-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 95vw;
   }
 }

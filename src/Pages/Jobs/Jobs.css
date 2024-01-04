@@ -11,7 +11,7 @@
 .no-applied {
   width: 18vw;
   padding: 2rem;
-  height: 25vh;
+  height: 20vh;
   text-align: center;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -46,5 +46,44 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@media (min-width: 576.01px) and (max-width: 992px) {
+  .jobs-container {
+    padding: 15vh 2vw;
+    display: flex;
+    gap: 0.1rem;
+  }
+  .apply-job-box,
+  .Applied-jobs-container,
+  .no-applied {
+    width: 22vw;
+    padding: 2rem;
+    height: 15vh;
+  }
+  #post-job-btn2 {
+    width: 95%;
+  }
+  /* .inner-box {
+    width: 50vw;
+  } */
+}
+
+@media (max-width: 576px) {
+  .jobs-container {
+    display: flex;
+    flex-direction: column;
+    padding: 18vh 2vw;
+  }
+
+  .jobs-container .jobs-box {
+    width: 95vw;
+  }
+
+  .apply-job-box,
+  .Applied-jobs-container,
+  .no-applied {
+    width: 80vw;
+    height: 15vh;
   }
 }

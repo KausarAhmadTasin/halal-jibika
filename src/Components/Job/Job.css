@@ -1,6 +1,6 @@
 .job-box {
-  width: 60%;
-  height: 60vh;
+  width: 78%;
+  height: 64vh;
   text-align: center;
   padding: 1.2rem;
   margin: 0.5rem auto;
@@ -88,5 +88,19 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@media (min-width: 576.01px) and (max-width: 992px) {
+  .job-box {
+    width: 80%;
+    height: 42vh;
+    padding: 1.6rem;
+  }
+}
+@media (max-width: 576px) {
+  .job-box {
+    width: 90%;
+    height: 48vh;
+    padding: 1.3rem;
   }
 }

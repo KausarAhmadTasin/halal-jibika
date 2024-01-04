@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import "./Home.css";
 import LatestJobs from "../../Components/LatestJobs/LatestJobs";
 import Loading from "../../Components/Loading/Loading";
+
 const Home = () => {
   const loadedJobs = useLoaderData();
 

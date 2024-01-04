@@ -6,7 +6,7 @@ import AppliedJobsSide from "../../Components/AppliedJobsSide/AppliedJobsSide";
 import Loading from "../../Components/Loading/Loading";
 import { onAuthStateChanged } from "firebase/auth";
 import auth from "../../Config/Firebase";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 const Jobs = () => {
