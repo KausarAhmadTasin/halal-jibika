@@ -1,0 +1,129 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Google Internship Program",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Google",
+      "position": "Intern Developer",
+      "description": "This is an internship opportunity from Google",
+      "isFavorite": true
+    },
+    {
+      "id": 2,
+      "title": "Facebook Junior Development Program",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Facebook",
+      "position": "Junior Developer",
+      "description": "This is a junior developer recruitment from Facebook",
+      "isFavorite": true
+    },
+    {
+      "id": 3,
+      "title": "Microsoft Senior Development Program",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Microsoft",
+      "position": "Senior Developer",
+      "description": "This is a junior developer recruitment from Microsoft"
+    },
+    {
+      "id": 6,
+      "title": "Tesla Autonomous Driving Engineer",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Tesla",
+      "position": "Autonomous Driving Engineer",
+      "description": "Help shape the future of autonomous driving at Tesla",
+      "isFavorite": true
+    },
+    {
+      "id": 7,
+      "title": "IBM Data Scientist Opening",
+      "logo": "https://picsum.photos/200",
+      "companyName": "IBM",
+      "position": "Data Scientist",
+      "description": "Explore the world of data science with IBM"
+    },
+    {
+      "id": 8,
+      "title": "Netflix Content Creator Role",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Netflix",
+      "position": "Content Creator",
+      "description": "Contribute to original content creation at Netflix"
+    },
+    {
+      "id": 9,
+      "title": "Uber Eats Product Manager Position",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Uber",
+      "position": "Product Manager",
+      "description": "Drive innovation in food delivery as a Product Manager at Uber Eats"
+    },
+    {
+      "title": "6",
+      "logo": "https://picsum.photos/200",
+      "companyName": "aggag",
+      "position": "rfhgsdfh",
+      "description": "sdhsdhs",
+      "id": 11,
+      "isFavorite": true,
+      "isApplied": true
+    },
+    {
+      "title": "weryery",
+      "logo": "https://picsum.photos/200",
+      "companyName": "aryergfg",
+      "position": "atbaeynerna",
+      "description": "amneryhrtysnqea",
+      "id": 12
+    },
+    {
+      "title": "sehsaerghsh",
+      "logo": "https://picsum.photos/200",
+      "companyName": "zasetgbaet",
+      "position": "awetnatna",
+      "description": "nsertnertnr",
+      "id": 13
+    },
+    {
+      "id": 10,
+      "title": "Amazon Cloud Architect Role",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Amazon",
+      "position": "Cloud Architect",
+      "description": "Design and implement scalable cloud solutions at Amazon"
+    },
+    {
+      "id": 13,
+      "title": "Adobe UX/UI Designer Opening",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Adobe",
+      "position": "UX/UI Designer",
+      "description": "Shape the user experience with innovative designs at Adobe"
+    },
+    {
+      "id": 14,
+      "title": "Cisco Network Engineer Position",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Cisco",
+      "position": "Network Engineer",
+      "description": "Build and maintain efficient network infrastructure at Cisco"
+    },
+    {
+      "id": 15,
+      "title": "HP Software Developer Role",
+      "logo": "https://picsum.photos/200",
+      "companyName": "HP",
+      "position": "Software Developer",
+      "description": "Contribute to software development projects at HP"
+    },
+    {
+      "id": 16,
+      "title": "Twitter Social Media Strategist",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Twitter",
+      "position": "Social Media Strategist",
+      "description": "Shape the social media presence of Twitter with strategic planning"
+    }
+  ]
+}
