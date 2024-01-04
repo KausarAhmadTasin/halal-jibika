@@ -32,7 +32,10 @@ const Home = () => {
           </Link>
         </div>
         <div className="hero-img">
-          <img src="../../../public/job-search.jpg" alt="" />
+          <img
+            src="https://raw.githubusercontent.com/KausarAhmadTasin/halal-jibika/main/public/job-search.jpg"
+            alt=""
+          />
         </div>
       </section>
       <section className="latest-jobs">
