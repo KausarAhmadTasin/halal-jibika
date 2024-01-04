@@ -5,7 +5,7 @@ const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
   const [favoriteJobs, setFavoriteJobs] = useState([]);
-  const [applied, setApplied] = useState([]); // Using 'applied' instead of 'appliedJobs'
+  const [applied, setApplied] = useState([]);
 
   const removeFromFavorites = (job) => {
     setFavoriteJobs((prevFavorites) =>
@@ -26,7 +26,7 @@ export const FavoritesProvider = ({ children }) => {
   };
 
   const removeFromApplied = (jobId) => {
-    setApplied((prevApplied) => prevApplied.filter((job) => job.id !== jobId)); // Using 'setApplied' instead of 'setAppliedJobs'
+    setApplied((prevApplied) => prevApplied.filter((job) => job.id !== jobId));
   };
 
   return (

@@ -45,7 +45,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/post",
-        element: <PostJob />,
+        element: <Protected Component={PostJob} />,
       },
       {
         path: "/jobs/:id",
