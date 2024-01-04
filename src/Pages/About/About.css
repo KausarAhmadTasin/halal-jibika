@@ -77,3 +77,15 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 576px) {
+  .team-members {
+    display: block;
+  }
+  .team-member {
+    margin-bottom: 2rem;
+  }
+  .aboout-container {
+    margin: 0 1rem;
+  }
+}
