@@ -33,7 +33,7 @@
 
 .hero-img img {
   border-radius: 8px;
-  max-width: 28vw;
+  max-width: 30vw;
 }
 .primary-btn Link {
   text-decoration: none;
@@ -207,7 +207,7 @@ body {
   }
   .hero-img img {
     border-radius: 8px;
-    width: 80vw;
+    max-width: 95vw;
   }
   .jobs-list {
     display: grid;

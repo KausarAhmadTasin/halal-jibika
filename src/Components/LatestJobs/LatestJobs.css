@@ -18,8 +18,9 @@
     color: #54eb86;
   }
 }
-.latest-logo {
+.latest-box .latest-logo {
   margin-bottom: 1em;
+  width: 200px;
 }
 .latest-box h3 {
   font-weight: 500;
