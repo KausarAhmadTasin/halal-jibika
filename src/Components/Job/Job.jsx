@@ -99,7 +99,7 @@ const Job = ({ job, handleDelete }) => {
             </div>
           </div>
         </div>
-        <hr className="jobs-hr" />
+        <hr className="jobs-hr jobs-hr2" />
       </div>
     </>
   );

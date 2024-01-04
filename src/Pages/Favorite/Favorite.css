@@ -6,3 +6,27 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .fav-box {
+    width: 80vw;
+  }
+  .job-box {
+    height: 38vh;
+  }
+  .jobs-hr2 {
+    width: 68vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .fav-box {
+    width: 85vw;
+  }
+  .job-box {
+    height: 58vh;
+  }
+  .jobs-hr2 {
+    width: 85vw;
+  }
+}

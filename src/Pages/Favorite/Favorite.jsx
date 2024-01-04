@@ -16,7 +16,7 @@ const Favorite = () => {
 
       {favoriteJobs.length <= 0 && <h2>No Favorite Job!</h2>}
 
-      <div className="jobs-box">
+      <div className="jobs-box fav-box">
         {favoriteJobs.map((job) => (
           <Job key={job.id} job={job} />
         ))}
