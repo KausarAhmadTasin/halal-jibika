@@ -1,15 +1,25 @@
-import React from "react";
+import "./ApplyBtn.css";
 
-const ApplyBtn = ({ handleAppliedClick }) => {
+const ApplyBtn = ({ apply, handleAppliedClick }) => {
   return (
     <>
-      <button
-        onClick={() => handleAppliedClick()}
-        className="primary-btn "
-        id="job-apply-btn"
-      >
-        Apply
-      </button>
+      {apply ? (
+        <button
+          onClick={() => handleAppliedClick()}
+          className="primary-btn "
+          id="job-apply-btn"
+        >
+          Applied
+        </button>
+      ) : (
+        <button
+          onClick={() => handleAppliedClick()}
+          className="primary-btn "
+          id="job-apply-btn"
+        >
+          Apply
+        </button>
+      )}
     </>
   );
 };

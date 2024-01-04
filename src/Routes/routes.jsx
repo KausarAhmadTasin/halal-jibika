@@ -12,6 +12,7 @@ import Jobdetails from "../Components/JobDetails/Jobdetails";
 import axios from "axios";
 import PostJob from "../Components/PostJob/PostJob";
 import EditJob from "../Components/EditJob/EditJob";
+import Protected from "./Protected";
 
 const routes = createBrowserRouter([
   {
@@ -54,7 +55,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/favorite",
-        element: <Favorite />,
+        element: <Protected Component={Favorite} />,
       },
     ],
   },

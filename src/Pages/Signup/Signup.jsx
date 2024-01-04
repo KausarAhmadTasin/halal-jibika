@@ -106,20 +106,20 @@ const Signup = () => {
             />
           </form>
 
+          <div className="foot-note">
+            <p>Already have an account? </p>
+            <button className="log-in-recommend-btn">
+              {" "}
+              <Link to="/login">Log in</Link>{" "}
+            </button>
+          </div>
+
           <div className="google-github">
             <button onClick={handleGoogleSignup} className="btn-flex">
               Sign up with <FcGoogle />
             </button>
             <button onClick={() => handleGithubSignup()} className="btn-flex">
               Sign up with <FaGithub />
-            </button>
-          </div>
-
-          <div className="foot-note">
-            <p>Already have an account? </p>
-            <button className="log-in-recommend-btn">
-              {" "}
-              <Link to="/login">Log in</Link>{" "}
             </button>
           </div>
         </div>

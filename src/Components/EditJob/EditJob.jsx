@@ -60,6 +60,7 @@ const EditJob = () => {
                   id="jobName"
                   name="jobName"
                   autoFocus
+                  required
                   placeholder="Job Name..."
                   onChange={(e) =>
                     setEditJob({ ...editJob, title: e.target.value })
@@ -74,7 +75,7 @@ const EditJob = () => {
                   className="input-box"
                   id="logo"
                   name="logo"
-                  autoFocus
+                  required
                   placeholder="Company Logo..."
                   onChange={(e) =>
                     setEditJob({ ...editJob, logo: e.target.value })
@@ -90,6 +91,7 @@ const EditJob = () => {
                   id="companyName"
                   name="companyName"
                   placeholder="Company Name..."
+                  required
                   onChange={(e) =>
                     setEditJob({ ...editJob, companyName: e.target.value })
                   }
@@ -104,6 +106,7 @@ const EditJob = () => {
                   id="res"
                   name="res"
                   placeholder="Responsibility..."
+                  required
                   onChange={(e) =>
                     setEditJob({ ...editJob, position: e.target.value })
                   }
@@ -118,6 +121,7 @@ const EditJob = () => {
                   id="jobdesc"
                   name="jobdesc"
                   placeholder="Job Description..."
+                  required
                   onChange={(e) =>
                     setEditJob({ ...editJob, description: e.target.value })
                   }

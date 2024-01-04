@@ -1,28 +1,43 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import auth from "../../Config/Firebase";
-import {
-  useSignInWithEmailAndPassword,
-  useSignInWithGithub,
-  useSignInWithGoogle,
-} from "react-firebase-hooks/auth";
 import Header from "../../Components/Header/Header";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import Loading from "../../Components/Loading/Loading";
-import Error from "../../Components/Error/Error";
 import { toast } from "react-toastify";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
+import Loading from "../../Components/Loading/Loading";
 
 const Login = () => {
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
   const provider = new GoogleAuthProvider();
+  const navigate = useNavigate();
+
+  const loginHandle = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        navigate("/");
+        toast.success("Logged in successfully!");
+        if (!user) {
+          return <Loading />;
+        }
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error("Authentication failed. Incorrect email of password");
+      });
+  };
 
   const handleGoogleSignup = async () => {
     signInWithPopup(auth, provider)
@@ -56,31 +71,9 @@ const Login = () => {
         const credential = GithubAuthProvider.credentialFromError(error);
       });
   };
-  const navigate = useNavigate();
 
   const backClick = () => {
     navigate(-1);
-  };
-
-  const loginHandle = async (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    if (!email || !password) {
-      return toast.error("Email and password are required!");
-    }
-
-    try {
-      await signInWithEmailAndPassword(email, password);
-      if (user) {
-        navigate("/");
-        toast.success("Logged in!");
-      }
-    } catch (error) {
-      // Handle specific Firebase email/password sign-in error here
-      toast.error("Invalid email or password!");
-    }
   };
 
   return (
@@ -90,7 +83,7 @@ const Login = () => {
         <h2 className="text-center">Log in into your account</h2>
 
         <div className="login-container">
-          <form onSubmit={loginHandle} className="block">
+          <form onSubmit={(e) => loginHandle(e)} className="block">
             <div className="single-input">
               <input
                 className="input-box"

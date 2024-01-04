@@ -16,6 +16,8 @@ import Loading from "../Loading/Loading";
 const Job = ({ job, handleDelete }) => {
   const { id, title, logo, companyName, position } = job;
   const [heartClicked, setHeartClicked] = useState(false);
+  const [apply, setApply] = useState(false);
+  // const [apply, setA]
   const { addToFavorites, removeFromFavorites, isFavorite, addToApplied } =
     useFavorites();
   const navigate = useNavigate();
@@ -48,6 +50,7 @@ const Job = ({ job, handleDelete }) => {
       });
       navigate("/jobs");
     }
+    setApply(true);
   };
 
   if (!job) {
@@ -70,7 +73,7 @@ const Job = ({ job, handleDelete }) => {
               <b>Responsibility: </b> {position}
             </h3>
             <div className="jobs-btn">
-              <ApplyBtn handleAppliedClick={handleAppliedClick} />
+              <ApplyBtn apply={apply} handleAppliedClick={handleAppliedClick} />
               <Link to={`/jobs/${id}`}>
                 <button className="primary-btn " id="job-detail-btn">
                   Details

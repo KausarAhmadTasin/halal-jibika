@@ -32,6 +32,9 @@
 .links .active {
   color: #0955a0;
   background-color: #e9e0e0;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .links .link-style {
@@ -106,10 +109,6 @@
   font-size: 2rem;
   font-weight: 500;
   color: rgb(155, 153, 153);
-}
-
-.profile-img:hover + .profile-name {
-  display: flex;
 }
 
 .profile-name {

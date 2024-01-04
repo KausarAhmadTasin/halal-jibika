@@ -47,6 +47,7 @@ const PostJob = () => {
                   id="jobName"
                   name="jobName"
                   autoFocus
+                  required
                   placeholder="Job Name..."
                   onChange={(e) =>
                     setJobPost({ ...jobPost, title: e.target.value })
@@ -61,7 +62,7 @@ const PostJob = () => {
                   className="input-box"
                   id="logo"
                   name="logo"
-                  autoFocus
+                  required
                   placeholder="Company Logo..."
                   onChange={(e) =>
                     setJobPost({ ...jobPost, logo: e.target.value })
@@ -77,6 +78,7 @@ const PostJob = () => {
                   id="companyName"
                   name="companyName"
                   placeholder="Company Name..."
+                  required
                   onChange={(e) =>
                     setJobPost({ ...jobPost, companyName: e.target.value })
                   }
@@ -91,6 +93,7 @@ const PostJob = () => {
                   id="res"
                   name="res"
                   placeholder="Responsibility..."
+                  required
                   onChange={(e) =>
                     setJobPost({ ...jobPost, position: e.target.value })
                   }
@@ -104,6 +107,7 @@ const PostJob = () => {
                   className="input-box"
                   id="jobdesc"
                   name="jobdesc"
+                  required
                   placeholder="Job Description..."
                   onChange={(e) =>
                     setJobPost({ ...jobPost, description: e.target.value })
