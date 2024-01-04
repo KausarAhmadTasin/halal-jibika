@@ -42,7 +42,7 @@ const Home = () => {
               <LatestJobs key={job.id} job={job} />
             ))}
           </div>
-          <div>
+          <div className="latest-btn">
             <Link to="/post">
               <button className="primary-btn " id="post-job-btn">
                 Post Job

@@ -25,3 +25,15 @@
   font-weight: 500;
   font-size: 1rem;
 }
+@media (max-width: 576px) {
+  .latest-box {
+    width: 78vw;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 576.01px) and (max-width: 992px) {
+  .latest-box {
+    width: 40vw;
+    margin: 0 auto;
+  }
+}

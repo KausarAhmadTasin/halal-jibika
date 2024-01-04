@@ -71,3 +71,13 @@ hr {
 .social-links a {
   text-decoration: none;
 }
+
+@media (max-width: 992px) {
+  .lower-footer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .copy-right {
+    text-align: center;
+  }
+}
