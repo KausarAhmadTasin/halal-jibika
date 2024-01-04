@@ -23,8 +23,11 @@ const Job = ({ job, handleDelete }) => {
   const navigate = useNavigate();
 
   const handleEdit = () => {
-    confirm(`Do you want to edit ${title}?`);
-    navigate("/editJob", { state: { job } });
+    const userConfirmed = window.confirm(`Do you want to edit ${title}?`);
+
+    if (userConfirmed) {
+      navigate(`/editJob`, { state: { job } });
+    }
   };
 
   const handleFavoriteClick = () => {

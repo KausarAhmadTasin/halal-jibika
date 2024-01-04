@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const EditJob = () => {
   const location = useLocation();
-  const { job } = location.state; // Accessing the job data from the route state
+  const { job } = location.state;
   const navigate = useNavigate();
   const [editJob, setEditJob] = useState({
     title: "",
@@ -27,15 +28,22 @@ const EditJob = () => {
     }
   }, [job]);
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditJob((prevEditJob) => ({
+      ...prevEditJob,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .put(`http://localhost:9000/jobs/${job.id}`, editJob)
       .then((response) => {
-        toast.success("Job eddited successfully!", {
+        toast.success("Job edited successfully!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        setEditJob(response.data);
         navigate("/jobs");
       })
       .catch((error) => {
@@ -58,13 +66,12 @@ const EditJob = () => {
                 <input
                   className="input-box"
                   id="jobName"
-                  name="jobName"
+                  name="title"
                   autoFocus
+                  value={editJob.title}
                   required
                   placeholder="Job Name..."
-                  onChange={(e) =>
-                    setEditJob({ ...editJob, title: e.target.value })
-                  }
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="single-input">
@@ -76,10 +83,9 @@ const EditJob = () => {
                   id="logo"
                   name="logo"
                   required
+                  value={editJob.logo}
                   placeholder="Company Logo..."
-                  onChange={(e) =>
-                    setEditJob({ ...editJob, logo: e.target.value })
-                  }
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="single-input">
@@ -90,11 +96,10 @@ const EditJob = () => {
                   className="input-box"
                   id="companyName"
                   name="companyName"
+                  value={editJob.companyName}
                   placeholder="Company Name..."
                   required
-                  onChange={(e) =>
-                    setEditJob({ ...editJob, companyName: e.target.value })
-                  }
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="single-input">
@@ -104,12 +109,11 @@ const EditJob = () => {
                 <input
                   className="input-box"
                   id="res"
-                  name="res"
+                  name="position"
                   placeholder="Responsibility..."
                   required
-                  onChange={(e) =>
-                    setEditJob({ ...editJob, position: e.target.value })
-                  }
+                  value={editJob.position}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="single-input">
@@ -119,12 +123,11 @@ const EditJob = () => {
                 <input
                   className="input-box"
                   id="jobdesc"
-                  name="jobdesc"
+                  name="description"
                   placeholder="Job Description..."
                   required
-                  onChange={(e) =>
-                    setEditJob({ ...editJob, description: e.target.value })
-                  }
+                  value={editJob.description}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>

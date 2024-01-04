@@ -15,7 +15,6 @@ const Header = () => {
   const handleClick = () => {
     setShowSidebar(!showSidebar);
   };
-  console.log(user);
 
   const handleSignOut = () => {
     signOut(auth);

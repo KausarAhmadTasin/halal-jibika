@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./PostJob.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const PostJob = () => {
   const [jobPost, setJobPost] = useState({
     title: "",
