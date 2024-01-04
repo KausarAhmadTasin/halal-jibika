@@ -57,12 +57,13 @@
   height: 100vh;
   z-index: 100;
   display: flex;
-  background-color: #ffffff;
+  background-color: #ffffff7e;
   flex-direction: column;
   backdrop-filter: blur(10px);
   width: 50vw;
   padding: 3rem;
   justify-content: flex-start;
+  list-style: none;
 }
 
 .sidebar .links {
@@ -133,12 +134,48 @@
 }
 
 /* Media query for small screens */
-@media (max-width: 800px) {
+@media (min-width: 576px) and (max-width: 922px) {
   .hamburger {
     display: block;
   }
 
   .hideOnSmallScreen {
     display: none;
+  }
+  .sidebar {
+    width: 30%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-bar {
+    max-width: 81%;
+    height: 3rem;
+    font-size: 1.2rem;
+    padding: 0.7rem 4rem;
+    display: flex;
+    justify-content: center;
+  }
+  /* .logo-box {
+    padding: 1rem;
+  } */
+  .links {
+    margin: 1rem 0;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .hideOnSmallScreen {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    width: 60%;
+    padding: 2rem;
   }
 }
