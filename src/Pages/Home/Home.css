@@ -207,7 +207,7 @@ body {
   }
   .hero-img img {
     border-radius: 8px;
-    max-width: 95vw;
+    width: 80vw;
   }
   .jobs-list {
     display: grid;
