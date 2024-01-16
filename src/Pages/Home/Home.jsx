@@ -32,7 +32,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="hero-img">
-          <img src="https://i.ibb.co/zhH3dL7/job-search.jpg" alt="" />
+          <img src="https://i.ibb.co/52WVcYF/job-search-min.jpg" alt="" />
         </div>
       </section>
       <section className="latest-jobs">
