@@ -7,7 +7,9 @@
       "companyName": "Google",
       "position": "Intern Developer",
       "description": "This is an internship opportunity from Google",
-      "isFavorite": true
+      "isFavorite": true,
+      "isFavourite": true,
+      "applied": true
     },
     {
       "id": 2,
@@ -24,7 +26,8 @@
       "logo": "https://picsum.photos/200",
       "companyName": "Microsoft",
       "position": "Senior Developer",
-      "description": "This is a junior developer recruitment from Microsoft"
+      "description": "This is a junior developer recruitment from Microsoft",
+      "isTrue": true
     },
     {
       "id": 6,
@@ -33,7 +36,8 @@
       "companyName": "Tesla",
       "position": "Autonomous Driving Engineer",
       "description": "Help shape the future of autonomous driving at Tesla",
-      "isFavorite": true
+      "isFavorite": true,
+      "isTrue": true
     },
     {
       "id": 7,
@@ -60,46 +64,12 @@
       "description": "Drive innovation in food delivery as a Product Manager at Uber Eats"
     },
     {
-      "title": "6",
-      "logo": "https://picsum.photos/200",
-      "companyName": "aggag",
-      "position": "rfhgsdfh",
-      "description": "sdhsdhs",
-      "id": 11,
-      "isFavorite": true,
-      "isApplied": true
-    },
-    {
-      "title": "weryery",
-      "logo": "https://picsum.photos/200",
-      "companyName": "aryergfg",
-      "position": "atbaeynerna",
-      "description": "amneryhrtysnqea",
-      "id": 12
-    },
-    {
-      "title": "sehsaerghsh",
-      "logo": "https://picsum.photos/200",
-      "companyName": "zasetgbaet",
-      "position": "awetnatna",
-      "description": "nsertnertnr",
-      "id": 13
-    },
-    {
       "id": 10,
       "title": "Amazon Cloud Architect Role",
       "logo": "https://picsum.photos/200",
       "companyName": "Amazon",
       "position": "Cloud Architect",
       "description": "Design and implement scalable cloud solutions at Amazon"
-    },
-    {
-      "id": 13,
-      "title": "Adobe UX/UI Designer Opening",
-      "logo": "https://picsum.photos/200",
-      "companyName": "Adobe",
-      "position": "UX/UI Designer",
-      "description": "Shape the user experience with innovative designs at Adobe"
     },
     {
       "id": 14,
@@ -124,6 +94,14 @@
       "companyName": "Twitter",
       "position": "Social Media Strategist",
       "description": "Shape the social media presence of Twitter with strategic planning"
+    },
+    {
+      "title": "Google Internship Program",
+      "logo": "https://picsum.photos/200",
+      "companyName": "Google",
+      "position": "Senior",
+      "description": "Software Engineer",
+      "id": 17
     }
   ]
 }

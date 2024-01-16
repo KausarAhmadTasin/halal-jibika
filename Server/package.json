@@ -1,0 +1,14 @@
+{
+    "name": "jobs-server",
+    "description": "jobs server description",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "json-server --watch db_jobs.json --no-cors true --port 9000"
+    },
+    "dependencies": {
+        "json-server": "^0.17.4"
+    },
+    "keywords": [],
+    "author": "ASSDI"
+}
