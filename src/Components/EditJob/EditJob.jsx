@@ -39,7 +39,10 @@ const EditJob = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:9000/jobs/${job.id}`, editJob)
+      .put(
+        `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs/${job.id}`,
+        editJob
+      )
       .then((response) => {
         toast.success("Job edited successfully!", {
           position: toast.POSITION.TOP_RIGHT,

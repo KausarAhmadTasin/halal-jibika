@@ -24,7 +24,9 @@ const routes = createBrowserRouter([
         element: <Home />,
         loader: () =>
           axios
-            .get("http://localhost:9000/jobs")
+            .get(
+              "https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs"
+            )
             .then((response) => response.data),
       },
       {
@@ -51,7 +53,9 @@ const routes = createBrowserRouter([
         path: "/jobs/:id",
         element: <Jobdetails />,
         loader: ({ params }) =>
-          axios.get(`http://localhost:9000/jobs/${params.id}`),
+          axios.get(
+            `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs/${params.id}`
+          ),
       },
       {
         path: "/favorite",

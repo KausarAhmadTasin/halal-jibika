@@ -11,7 +11,7 @@ const PostJob = () => {
     position: "",
     description: "",
   });
-  const URL = `http://localhost:9000/jobs`;
+  const URL = `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs`;
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
