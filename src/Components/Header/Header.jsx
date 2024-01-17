@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Header.css";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Config/Firebase";
 import { signOut } from "firebase/auth";
@@ -11,6 +11,7 @@ const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [user, setUser] = useAuthState(auth);
   const navigate = useNavigate();
+  const menuRef = useRef(null);
 
   const handleClick = () => {
     setShowSidebar(!showSidebar);
@@ -22,10 +23,23 @@ const Header = () => {
     navigate("/login");
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowSidebar(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
   return (
     <>
       {showSidebar && (
-        <nav>
+        <nav ref={menuRef}>
           <div className="sidebar">
             <div onClick={handleClick} className="cancel-sidebar">
               <RxCross2 />

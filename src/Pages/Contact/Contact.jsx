@@ -51,7 +51,10 @@ const Contact = () => {
             <h2>Or Email Us Directly</h2>
             <p>
               You can also reach us via email at{" "}
-              <a href="mailto:info@jobfinder.com">info@jobfinder.com</a>.
+              <a href="mailto:kausar.ahmad.tasin01@gmail.com">
+                kausar.ahmad.tasin01@gmail.com
+              </a>
+              .
             </p>
           </div>
         </div>
