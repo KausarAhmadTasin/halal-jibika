@@ -23,14 +23,12 @@ Welcome to **Halal Jibika**, a React.js-based web application that allows users 
     - Logged-in users can post job offers with details.
     - Update or delete posted job offers.
 
-3. **Job Search:**
-    - Search for jobs based on specific criteria.
 
-4. **Favorite Jobs:**
+3. **Favorite Jobs:**
     - Users can mark jobs as favorites.
     - Only logged-in users can view their favorite jobs.
 
-5. **Applied Jobs:**
+4. **Applied Jobs:**
     - Logged-in users can apply for jobs.
     - Access a list of applied jobs.
 
@@ -39,4 +37,4 @@ Welcome to **Halal Jibika**, a React.js-based web application that allows users 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/halal-jibika.git
+   git clone https://github.com/KausarAhmadTasin/halal-jibika.git
