@@ -75,11 +75,13 @@
   .jobs-container {
     display: flex;
     flex-direction: column;
-    padding: 18vh 2vw;
+    padding: 15vh 2vw;
+    width: 95vw;
   }
 
   .jobs-container .jobs-box {
-    width: 95vw;
+    width: 90vw;
+    margin: 0 auto;
   }
 
   .apply-job-box,

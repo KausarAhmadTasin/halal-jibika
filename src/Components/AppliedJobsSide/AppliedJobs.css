@@ -37,3 +37,11 @@
 .remove-button:hover {
   background-color: #e61c1c;
 }
+
+@media (max-width: 576px) {
+  .Applied-jobs-container,
+  .no-applied {
+    width: 80vw;
+    height: 35vh;
+  }
+}

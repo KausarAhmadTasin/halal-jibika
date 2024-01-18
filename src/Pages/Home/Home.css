@@ -199,7 +199,6 @@ body {
     gap: 1rem;
     min-height: 100vh;
     padding: 2rem 1rem;
-    padding-top: 4rem;
   }
   .hero-text {
     max-width: 95vw;
@@ -222,6 +221,7 @@ body {
   #post-job-btn {
     width: 30vw;
     font-size: 0.8rem;
+    margin-left: 0.1rem;
   }
   #all-jobs-btn {
     height: 3rem;

@@ -81,3 +81,14 @@ hr {
     text-align: center;
   }
 }
+@media (max-width: 576px) {
+  .footer-links h2,
+  .footer-about h2 {
+    font-size: 1.2rem;
+    width: 7rem;
+  }
+  .footer-links li,
+  .footer-about p {
+    font-size: 0.8rem;
+  }
+}

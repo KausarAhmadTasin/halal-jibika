@@ -11,16 +11,19 @@ const PostJob = () => {
     position: "",
     description: "",
   });
-  const URL = `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs`;
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(URL, jobPost)
-      .then((response) => {
-        setJobPost(response.data);
-        toast.success("Job added successfuly!", {
+      .post(
+        "https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs",
+        jobPost
+      )
+      .then(() => {
+        // console.log(res);
+        toast.success("Job added successfully!", {
           position: toast.POSITION.TOP_RIGHT,
         });
         navigate("/jobs");
@@ -50,7 +53,10 @@ const PostJob = () => {
                   required
                   placeholder="Job Name..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, title: e.target.value })
+                    setJobPost((prevJobPost) => ({
+                      ...prevJobPost,
+                      title: e.target.value,
+                    }))
                   }
                 />
               </div>
@@ -65,7 +71,10 @@ const PostJob = () => {
                   required
                   placeholder="Company Logo..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, logo: e.target.value })
+                    setJobPost((prevJobPost) => ({
+                      ...prevJobPost,
+                      logo: e.target.value,
+                    }))
                   }
                 />
               </div>
@@ -80,7 +89,10 @@ const PostJob = () => {
                   placeholder="Company Name..."
                   required
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, companyName: e.target.value })
+                    setJobPost((prevJobPost) => ({
+                      ...prevJobPost,
+                      companyName: e.target.value,
+                    }))
                   }
                 />
               </div>
@@ -95,7 +107,10 @@ const PostJob = () => {
                   placeholder="Responsibility..."
                   required
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, position: e.target.value })
+                    setJobPost((prevJobPost) => ({
+                      ...prevJobPost,
+                      position: e.target.value,
+                    }))
                   }
                 />
               </div>
@@ -110,7 +125,10 @@ const PostJob = () => {
                   required
                   placeholder="Job Description..."
                   onChange={(e) =>
-                    setJobPost({ ...jobPost, description: e.target.value })
+                    setJobPost((prevJobPost) => ({
+                      ...prevJobPost,
+                      description: e.target.value,
+                    }))
                   }
                 />
               </div>

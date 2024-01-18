@@ -29,3 +29,20 @@
   margin-top: -0.5rem;
   color: #0a66c2;
 }
+
+@media (max-width: 576px) {
+  .post-container {
+    padding-top: 15vh;
+  }
+  .post-block {
+    width: 90%;
+    /* margin: 0 auto;
+    background-color: #fff;
+    margin-bottom: 5vh;
+    border-radius: 0.6rem; */
+  }
+  .inner-post input {
+    width: 70vw;
+    margin-top: 0.4rem;
+  }
+}
