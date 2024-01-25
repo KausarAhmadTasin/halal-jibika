@@ -18,7 +18,7 @@ const PostJob = () => {
     e.preventDefault();
     axios
       .post(
-        "https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs",
+        "https://kausar-ahmad.onrender.com/jobs",
         jobPost
       )
       .then(() => {

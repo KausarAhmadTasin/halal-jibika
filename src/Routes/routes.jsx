@@ -25,7 +25,7 @@ const routes = createBrowserRouter([
         loader: () =>
           axios
             .get(
-              "https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs"
+              "https://kausar-ahmad.onrender.com/jobs"
             )
             .then((response) => response.data),
       },
@@ -54,7 +54,7 @@ const routes = createBrowserRouter([
         element: <Jobdetails />,
         loader: ({ params }) =>
           axios.get(
-            `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs/${params.id}`
+            `https://kausar-ahmad.onrender.com/jobs/${params.id}`
           ),
       },
       {
