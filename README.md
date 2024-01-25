@@ -11,7 +11,7 @@ Welcome to **Halal Jibika**, a React.js-based web application that allows users 
 - **React Router Dom:** For navigation within the React app.
 - **Toastify:** A React notification library for displaying alerts.
 - **React Icons:** Icon library for React components.
-- **JSON Server:** Used to host the `db.json` for managing job data.
+- **Render:** Used to host the `db.json` for managing job data.
 - **Vercel:** Deployment platform for hosting the React app.
 
 ## Features
