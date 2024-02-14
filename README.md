@@ -3,6 +3,7 @@
 Welcome to **Halal Jibika**, a React.js-based web application that allows users to post job offers and manage their job posts. This app provides a seamless user experience with features such as job posting, job search, updating, deleting, and favoriting job posts. Users can also apply for jobs, and only logged-in users have access to view their favorite jobs and applied jobs.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Yl8QGIZ5k4M?si=v2kgG3MJmVdQFim5" frameborder="0" allowfullscreen></iframe>
+
 ## Technologies Used
 
 - **React.js:** A JavaScript library for building user interfaces.
