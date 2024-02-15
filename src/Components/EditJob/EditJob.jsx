@@ -40,7 +40,8 @@ const EditJob = () => {
     e.preventDefault();
     axios
       .put(
-        `https://kausar-ahmad.onrender.com/jobs/${job.id}`,
+        `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs/${job.id}`,
+        // `https://kausar-ahmad.onrender.com/jobs/${job.id}`,
         editJob
       )
       .then((response) => {
