@@ -11,8 +11,7 @@ import axios from "axios";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
-  const URL = `https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs`;
-  // "https://kausar-ahmad.onrender.com/jobs";
+  const URL = "https://kausar-ahmad.onrender.com/jobs";
   const [isUser, setIsUser] = useState(false);
 
   useEffect(() => {

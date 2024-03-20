@@ -17,11 +17,7 @@ const PostJob = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(
-        "https://my-json-server.typicode.com/KausarAhmadTasin/halal-jibika/jobs",
-        // "https://kausar-ahmad.onrender.com/jobs",
-        jobPost
-      )
+      .post("https://kausar-ahmad.onrender.com/jobs", jobPost)
       .then(() => {
         // console.log(res);
         toast.success("Job added successfully!", {
