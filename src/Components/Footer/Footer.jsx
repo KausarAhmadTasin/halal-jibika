@@ -13,10 +13,9 @@ const Footer = () => {
           <div className="footer-about">
             <h2>About</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, ut sed, reiciendis nisi tempora officiis modi sit id
-              perspiciatis dolorem fuga debitis odit nulla optio corrupti
-              dolores? Vel, adipisci quisquam!
+              At Halal Jibika, our mission is to revolutionize the job search
+              experience by providing a platform that streamlines the process
+              and ensures a perfect match between employers and job seekers.
             </p>
           </div>
           <div className="footer-links">
