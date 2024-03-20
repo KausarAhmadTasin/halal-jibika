@@ -19,10 +19,10 @@ const Home = () => {
             jobs”
           </h3>
           <div className="dero-desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil,
-            maiores, sunt eius amet optio repellat deleniti officia sit eos
-            dolor aliquid assumenda ducimus. Nemo corrupti id ratione at autem
-            itaque?
+            Striving towards a fulfilling career is a journey filled with
+            opportunities and growth. Each application, each interview, is a
+            step closer to seizing the role that aligns with my passions and
+            skills.
           </div>
           <Link to="/jobs">
             <button className="primary-btn" id="exp-btn">

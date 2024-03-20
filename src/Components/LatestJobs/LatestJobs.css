@@ -13,6 +13,7 @@
 .latest-title {
   font-size: 1.3rem;
   margin-bottom: 1em;
+  height: 2.8rem;
   color: #1875d1;
   &:hover {
     color: #54eb86;
@@ -21,6 +22,7 @@
 .latest-box .latest-logo {
   margin-bottom: 1em;
   width: 200px;
+  border-radius: 0.5rem;
 }
 .latest-box h3 {
   font-weight: 500;

@@ -14,7 +14,7 @@
   color: rgb(59, 54, 54);
 }
 .primary-btn {
-  background-color: #0a66c2;
+  background-color: #2980b9;
   cursor: pointer;
   font-weight: 600;
   font-size: 1rem;
@@ -50,10 +50,13 @@
 
 .hero-slogan {
   margin-bottom: 0.6rem;
+  color: rgb(83, 82, 82);
 }
 
 .dero-desc {
   margin-bottom: 1.5rem;
+  color: rgb(82, 78, 78);
+  margin-top: 1rem;
 }
 
 /* Latest jobs styles */
@@ -64,6 +67,7 @@
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 /* Mapped styles */
